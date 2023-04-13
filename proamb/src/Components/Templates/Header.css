@@ -1,0 +1,37 @@
+header{
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    justify-content: space-around;
+    background-color: #def2d5;
+    border-radius: 37.5pc;
+    width: 1200px;
+    height: 100px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+img
+{
+    margin-top: 15px;
+    width: 90px;
+    height: 70px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+h3, button{
+    margin-top: 35px;
+}
+
+button{
+    background-color: white;
+    border: none;
+    border-radius: 30px;
+    height: 40px;
+    width: 80px;
+    font-size: large;
+    font-family: 'Poppins', sans-serif;
+}
