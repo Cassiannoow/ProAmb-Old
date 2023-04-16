@@ -1,5 +1,6 @@
 import './Header.css';
 import Logo from '../../assets/img/Logo/ProAmb_logo-removebg-preview.png'
+import Lupa from '../../assets/img/icons/lupa.png'
 import React from "react";
 import { Link } from 'react-router-dom';
 
@@ -8,24 +9,36 @@ export default function Header(props)
     return (
         <header>
             <Link to='/'>
-                <img src={Logo} alt='Logo ProAmb' />
+                <img src={Logo} alt='Logo ProAmb' id="logo"/>
             </Link>
+            <h3>
+                <Link to='/'>
+                    Início
+                </Link>
+            </h3>
 
-           <Link to='/'>
-                <h3>Início</h3>
-            </Link>
+            <div id="divBusca">
+                <input type="text" id="txtBusca" placeholder="Buscar"/>
+                <img src={Lupa} id="btnBusca" alt="Buscar"/>
+            </div>
 
-            <Link to='/aprender'>
-                <h3>Aprender</h3>
-            </Link>
+            <h3>
+                <Link to='/aprender'>
+                    Aprender
+                </Link>
+            </h3>
 
-            <Link to='/forum'>
-                <h3>Fórum</h3>
-            </Link>
+            <h3>
+                <Link to='/forum'>
+                    Fórum
+                </Link>
+            </h3>
 
-            <Link to='/cadastrar'>
-                <h3>Cadastrar-se</h3>
-            </Link>
+            <h3>
+                <Link to='/cadastrar'>
+                    Cadastrar - Se
+                </Link>
+            </h3>
 
             <Link to='/entrar'>
                 <button>
