@@ -1,0 +1,31 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url("../../assets/img/Fotos/Fundo_Home.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.card {
+    margin-top: 110px;
+    margin-left: 160px;
+    padding: 30px;
+    padding-bottom: 40px;
+    background: #4E8D43;
+    opacity: 0.8;
+    width: 450px;
+    border-radius: 0px 80px 0px 0px;
+}
+
+.card .texto {
+    opacity: 1;
+    color: white;
+    text-align: left;
+}
+
+.texto p {
+    font-size: 16pt;
+}
+
+.texto span {
+    font-size: 13pt;
+}

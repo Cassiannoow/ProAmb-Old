@@ -4,7 +4,7 @@ import Lupa from '../../assets/img/icons/lupa.png'
 import React from "react";
 import { Link } from 'react-router-dom';
 
-export default function Header(props)
+export default function Header()
 {
     return (
         <header>

@@ -1,12 +1,12 @@
 import './App.css';
-import Header from './Components/Templates/Header'
+import Home from './Components/Telas/Home'
 import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header />
+        <Home />
       </div>
     </BrowserRouter>
   );
