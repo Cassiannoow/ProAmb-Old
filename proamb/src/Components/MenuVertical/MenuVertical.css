@@ -1,0 +1,28 @@
+.nav {
+    margin-left: 800px;
+    padding: 0;
+    list-style: none;
+    width: 700px;
+    font-size: 80px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+li a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    background: #fff;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+li:hover { 
+    display: block;
+    text-decoration: underline;
+}
+
+.descartar {
+    background-color: aqua;
+}
