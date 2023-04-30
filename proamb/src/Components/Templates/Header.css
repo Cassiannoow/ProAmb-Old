@@ -6,8 +6,11 @@ header{
     border-radius: 37.5pc;
     width: 1200px;
     height: 100px;
-    margin: auto;
-    margin-top: 40px;
+    position: fixed;
+    margin:auto;
+    margin-top: 20px;
+    box-shadow: 3px 5px #00000025;
+    z-index: 5;
 }
 
 
@@ -35,34 +38,4 @@ button{
     width: 80px;
     font-size: large;
     font-family: 'Poppins', sans-serif;
-}
-
-#divBusca{
-    margin-top: 35px;
-    background: #FFFAFA;
-    border-radius: 37px ;
-    width:  263px;
-    height: 31px;
-}
-
-
-#txtBusca{
-    float:left;
-    background-color:transparent;
-    padding-left: 10px;
-    font-size:18px;
-    border:none;
-    height: 30px;
-    width: 195px;
-}
-
-input:focus{
-    outline: 0;
-}
-
-#btnBusca{
-    position: absolute;
-    top: 80px;
-    width: 22px;
-    height: 22px;
 }

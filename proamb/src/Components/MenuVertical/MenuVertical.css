@@ -1,12 +1,20 @@
 .nav {
-    margin-left: 800px;
     padding: 0;
     list-style: none;
     width: 700px;
     font-size: 80px;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    border-radius: 20px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+ul {
+    list-style: none;
+    border-radius: 50px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 li a {
@@ -15,7 +23,7 @@ li a {
     color: black;
     background: #fff;
     padding: 5px;
-    border: 1px solid #ccc;
+    padding-left: 20px;
 }
 
 li:hover { 
@@ -23,6 +31,18 @@ li:hover {
     text-decoration: underline;
 }
 
-.descartar {
-    background-color: aqua;
+#descartar a {
+    background-color: #8C7C2B;
+}
+
+#aprender a {
+    background-color: #DAFDBA;
+}
+
+#inspirar a {
+    background-color: #9AEBA3;
+}
+
+#sobre a {
+    background-color: #336F60;
 }

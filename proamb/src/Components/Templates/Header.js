@@ -1,6 +1,6 @@
 import './Header.css';
 import Logo from '../../assets/img/Logo/ProAmb_logo-removebg-preview.png'
-import Lupa from '../../assets/img/icons/lupa.png'
+import BarraDePesquisa from '../BarraDePesquisa/BarraDePesquisa';
 import React from "react";
 import { Link } from 'react-router-dom';
 
@@ -17,10 +17,7 @@ export default function Header()
                 </Link>
             </h3>
 
-            <div id="divBusca">
-                <input type="text" id="txtBusca" placeholder="Buscar"/>
-                <img src={Lupa} id="btnBusca" alt="Buscar"/>
-            </div>
+            <BarraDePesquisa />
 
             <h3>
                 <Link to='/aprender'>

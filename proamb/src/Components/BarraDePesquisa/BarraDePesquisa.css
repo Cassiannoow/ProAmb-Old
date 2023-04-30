@@ -1,0 +1,27 @@
+#divBusca{
+    margin-top: 35px;
+    background: #FFFAFA;
+    border-radius: 37px ;
+    width:  233px;
+    height: 31px;
+}
+
+#txtBusca{
+    float:left;
+    background-color:transparent;
+    padding-left: 10px;
+    font-size:18px;
+    border:none;
+    height: 30px;
+    width: 195px;
+}
+
+input:focus{
+    outline: 0;
+}
+
+#btnBusca{
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+}

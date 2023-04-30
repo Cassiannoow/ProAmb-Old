@@ -1,12 +1,22 @@
 body {
-    font-family: 'Poppins', sans-serif;
-    background-image: url("../../assets/img/Fotos/Fundo_Home.jpg");
+    background-image: url("../../assets/img/Fotos/Fundo_Home2.jpg");
+    background-size: auto 900px;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-color: #2D5C38;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+#intro {
+    font-family: 'Poppins', sans-serif;
+    height: 600px;
 }
 
 .card {
-    margin-top: 110px;
+    margin-top: 300px;
     margin-left: 160px;
     padding: 30px;
     padding-bottom: 40px;
@@ -28,4 +38,17 @@ body {
 
 .texto span {
     font-size: 13pt;
+}
+
+#menuVertical {
+    display: block;
+    background-color: #2D5C38;
+
+}
+
+.menuVertical {
+    margin-top: 200px;
+    margin-right: 150px;
+    margin-bottom: 70px;
+    float: right;
 }
