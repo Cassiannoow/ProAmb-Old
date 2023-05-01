@@ -13,6 +13,11 @@ header{
     z-index: 5;
 }
 
+.header {
+    display: flex;
+    justify-content: center;
+}
+
 
 #logo{
     margin-top: 15px;

@@ -47,8 +47,7 @@ body {
 }
 
 .menuVertical {
-    margin-top: 200px;
-    margin-right: 150px;
-    margin-bottom: 70px;
-    float: right;
+    margin-top: 100px;
+    margin-right: 100px;
+    float: left;
 }

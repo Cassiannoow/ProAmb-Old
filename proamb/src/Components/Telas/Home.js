@@ -1,15 +1,11 @@
 import "./Home.css";
 import React from "react";
-import Header from "../Templates/Header";
 import MenuVertical from "../MenuVertical/MenuVertical";
 
 export default function Home()
 {
     return (
         <>
-            <div className="header">
-                <Header />
-            </div>
             <section id="intro">
                 <div className="card">
                     <div className="texto">
