@@ -1,11 +1,13 @@
 import "./Home.css";
 import React from "react";
-import MenuVertical from "../MenuVertical/MenuVertical";
+import MenuVertical from "../../MenuVertical/MenuVertical";
+import Background from "../../../assets/img/Fotos/TelaDeFundo.png"
 
 export default function Home()
 {
     return (
-        <>
+        <article>
+            <img src={Background} alt="background" className="background" />
             <section id="intro">
                 <div className="card">
                     <div className="texto">
@@ -27,6 +29,6 @@ export default function Home()
                     <MenuVertical />
                 </div>
             </section>
-        </>
+        </article>
     )
 }

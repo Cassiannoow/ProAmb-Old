@@ -30,11 +30,11 @@ a{
     color: black;
 }
 
-h3{
+.item {
     margin-top: 35px;
 }
 
-button{
+.entrar {
     margin-top:  30px;
     background-color: white;
     border: none;

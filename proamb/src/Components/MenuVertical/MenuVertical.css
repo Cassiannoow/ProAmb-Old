@@ -46,32 +46,50 @@ ul {
     padding: 0;
 }
 
+li {
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
 li a {
-    display: block;
+    display: inline;
     text-decoration: none;
     color: black;
     background: #fff;
     padding: 5px;
-    padding-left: 20px;
+    padding-left: 40px;
 }
 
+
+/* fazer a animação nesse hover*/
 li:hover { 
     display: block;
     text-decoration: underline;
+    cursor: pointer;
 }
 
-#descartar a {
+
+#descartar, #descartar a {
     background-color: #8C7C2B;
 }
 
-#aprender a {
+#aprender, #aprender a {
     background-color: #DAFDBA;
 }
 
-#inspirar a {
+#inspirar, #inspirar * {
     background-color: #9AEBA3;
 }
 
-#sobre a {
+#sobre, #sobre * {
     background-color: #336F60;
+}
+
+.iconeLateral {
+    display: inline;
+    position: absolute;
+    right: 50px;
+    top: 15px;
 }

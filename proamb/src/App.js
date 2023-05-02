@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter } from 'react-router-dom'
-import Home from './Components/Telas/Home';
+import Rotas from './Rotas';
 import Header from './Components/Templates/Header';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
       <div className='App'>
         <Header />
-        <Home />
+        <Rotas />
       </div>
     </BrowserRouter>
   );

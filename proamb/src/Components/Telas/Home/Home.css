@@ -1,8 +1,18 @@
 body {
-    background-image: url("../../assets/img/Fotos/Fundo_Home2.jpg");
-    background-size: auto 900px;
-    background-repeat: no-repeat;
+    /*background-image: url("../../../assets/img/Fotos/TelaDeFundo.png");
+    background-size: auto 750px;
+    background-repeat: no-repeat;*/
     background-color: #2D5C38;
+    overflow-x: hidden;
+}
+
+.background {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right:0;
 }
 
 .header {
@@ -12,11 +22,11 @@ body {
 
 #intro {
     font-family: 'Poppins', sans-serif;
-    height: 600px;
+    height: 500px;
 }
 
 .card {
-    margin-top: 300px;
+    margin-top: 250px;
     margin-left: 160px;
     padding: 30px;
     padding-bottom: 40px;

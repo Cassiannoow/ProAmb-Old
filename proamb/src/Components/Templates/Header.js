@@ -12,7 +12,7 @@ export default function Header()
                 <Link to='/'>
                     <img src={Logo} alt='Logo ProAmb' id="logo"/>
                 </Link>
-                <h3>
+                <h3 className='item'>
                     <Link to='/'>
                         Início
                     </Link>
@@ -20,26 +20,26 @@ export default function Header()
 
                 <BarraDePesquisa />
 
-                <h3>
+                <h3 className='item'>
                     <Link to='/aprender'>
                         Aprender
                     </Link>
                 </h3>
 
-                <h3>
+                <h3 className='item'>
                     <Link to='/forum'>
                         Fórum
                     </Link>
                 </h3>
 
-                <h3>
+                <h3 className='item'>
                     <Link to='/cadastrar'>
                         Cadastrar - Se
                     </Link>
                 </h3>
 
                 <Link to='/entrar'>
-                    <button>
+                    <button className='entrar'>
                         <Link to='/entrar'>
                             <b>Entrar</b>
                         </Link>
