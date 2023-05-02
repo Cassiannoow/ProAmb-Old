@@ -38,13 +38,13 @@ export default function Header()
                     </Link>
                 </h3>
 
-                <Link to='/entrar'>
-                    <button className='entrar'>
-                        <Link to='/entrar'>
-                            <b>Entrar</b>
-                        </Link>
-                    </button>
-                </Link>
+                <section>
+                    <Link to='/entrar'>
+                        <div className='entrar'>
+                            <span>Entrar</span>
+                        </div>
+                    </Link>
+                </section>
             </header>
         </div>
     )

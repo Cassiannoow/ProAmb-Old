@@ -1,4 +1,92 @@
+#telaLogin {
+    display: grid;
+    grid-template-areas:
+    "login info";
+}
+
 .login {
-    margin-top: 250px;
+    grid-area: "login";
+    margin-top: 100px;
     margin-left: 150px;
+    overflow: hidden;
+}
+
+.login .opcao {
+    cursor: pointer;
+    display: inline;
+}
+
+.deselecionado {
+    color: #9C9C9C;
+}
+
+.selecionado {
+    color: white;
+    text-decoration: underline;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-around;
+    width: 30vw;
+}
+
+.campos {
+    width: 40vw;
+}
+
+.campos .campo {
+    display: block;
+    width: 450px;
+    height: 30px;
+    margin-top: 40px;
+    background-color: transparent;
+    border: none;
+    border-bottom: solid rgb(213, 251, 209) 1px;
+    font-size: 18pt;
+    padding-left: 10px;
+    padding-bottom: 2px;
+    color: white;
+}
+
+.campos #esqueciASenha {
+    color: white;
+    font-weight: 500;
+}
+
+.botoes {
+    width: 40vw;
+    position: relative;
+    margin-top: 30px;
+}
+
+.botoes .redesSociais {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.botoes .btnLogin {
+    width: 100px;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    position: absolute;
+    top: 50%;
+    left: 350px;
+    margin-top: -20px;
+    background-color: #519D70;
+    color: white;
+}
+
+.info {
+    grid-area: "info";
+    overflow: hidden;
+}
+
+#cardLogin {
+    margin-top: 100px;
+    margin-left: 0;
+    height: 250px;
+    background-color: rgba(218, 253, 186, 0.541);
+    color: white;
 }
