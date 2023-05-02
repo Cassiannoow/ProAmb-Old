@@ -1,0 +1,19 @@
+#divdivComentario {
+    margin-top: 35px;
+    background: #FFFAFA;
+    width:  233px;
+    height: 31px;
+}
+
+#txtComentario {
+    float:left;
+    padding-left: 10px;
+    font-size:18px;
+    border:none;
+    height: 30px;
+    width: 195px;
+}
+
+input:focus{
+    outline: 0;
+}

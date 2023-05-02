@@ -7,7 +7,7 @@
 .login {
     grid-area: "login";
     margin-top: 100px;
-    margin-left: 150px;
+    margin-left: 180px;
     overflow: hidden;
 }
 
@@ -52,6 +52,11 @@
 .campos #esqueciASenha {
     color: white;
     font-weight: 500;
+    cursor: pointer;
+}
+
+.campos #esqueciASenha:hover {
+    color: #13241a;
 }
 
 .botoes {
@@ -65,6 +70,18 @@
     justify-content: flex-start;
 }
 
+#google {
+    padding: 20px;
+}
+
+#email {
+    padding: 20px;
+}
+
+#email:hover, #google:hover {
+    cursor: pointer;
+}
+
 .botoes .btnLogin {
     width: 100px;
     height: 40px;
@@ -76,6 +93,11 @@
     margin-top: -20px;
     background-color: #519D70;
     color: white;
+    cursor: pointer;
+}
+
+.botoes .btnLogin:hover {
+    background-color: #13241a;
 }
 
 .info {
@@ -86,7 +108,7 @@
 #cardLogin {
     margin-top: 100px;
     margin-left: 0;
-    height: 250px;
+    height: 290px;
     background-color: rgba(218, 253, 186, 0.541);
     color: white;
 }
