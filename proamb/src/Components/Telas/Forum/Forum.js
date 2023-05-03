@@ -7,7 +7,7 @@ export default function Forum() {
         <article id="telaForum">
             <section className="artigo">
                 <div className="temaArtigo">
-                    <img id="imagemArtigo" src="https://surfguru.space/2018/09/180903100345000000.jpg"/>
+                    <img id="imagemArtigo" src="https://surfguru.space/2018/09/180903100345000000.jpg" alt="tartaruga" />
                     <br/>
                     <span><b>Discussão: Descarte de materiais nos oceanos</b></span>
                     <div className="comenteAqui">

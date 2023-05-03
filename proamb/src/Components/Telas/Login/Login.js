@@ -7,19 +7,54 @@ export default function Login() {
     let SelecionarLogin = () => {
         let lbLogin = document.querySelector('h3#btnLogin')
         let lbCadastro = document.querySelector('h3#btnCadastro')
-        lbLogin.classList.remove('deselecionado')
-        lbLogin.classList.add('selecionado')
-        lbCadastro.classList.remove('selecionado')
-        lbCadastro.classList.add('deselecionado')
+
+        if(lbLogin.classList.contains('deselecionado')) {
+            lbLogin.classList.remove('deselecionado')
+            lbLogin.classList.add('selecionado')
+            lbCadastro.classList.remove('selecionado')
+            lbCadastro.classList.add('deselecionado')
+
+            let inputConfSenha = document.getElementById('campos').lastChild
+            document.getElementById('campos').removeChild(inputConfSenha)
+
+            let inputEmail = document.getElementById('campos').lastChild
+            document.getElementById('campos').removeChild(inputEmail)
+
+            document.getElementById('esqueciASenha').classList.remove('invisivel')
+
+            document.getElementById('btnSubmit').innerHTML = 'Login'
+        }
     }
 
     let SelecionarCadastro = () => {
         let lbLogin = document.querySelector('h3#btnLogin')
         let lbCadastro = document.querySelector('h3#btnCadastro')
-        lbCadastro.classList.remove('deselecionado')
-        lbCadastro.classList.add('selecionado')
-        lbLogin.classList.remove('selecionado')
-        lbLogin.classList.add('deselecionado')
+        
+        if(lbCadastro.classList.contains('deselecionado')) {
+            lbCadastro.classList.remove('deselecionado')
+            lbCadastro.classList.add('selecionado')
+            lbLogin.classList.remove('selecionado')
+            lbLogin.classList.add('deselecionado')
+
+            let inputEmail = document.createElement('input')
+            inputEmail.id = 'email'
+            inputEmail.type = 'email'
+            inputEmail.className = 'campo'
+            inputEmail.placeholder = 'Email'
+
+            let inputConfirmarSenha = document.createElement('input')
+            inputConfirmarSenha.id = 'confSenha'
+            inputConfirmarSenha.type = 'password'
+            inputConfirmarSenha.className = 'campo'
+            inputConfirmarSenha.placeholder = 'Confirmar Senha'
+
+            document.getElementById('campos').appendChild(inputEmail)
+            document.getElementById('campos').appendChild(inputConfirmarSenha)
+
+            document.getElementById('esqueciASenha').classList.add('invisivel')
+
+            document.getElementById('btnSubmit').innerHTML = 'Cadastrar'
+        }
     }
 
     return(
@@ -32,18 +67,20 @@ export default function Login() {
                     </div>
 
                     <div className="campos">
-                        <input id='username' type="text" placeholder="Nome de usuário" className="campo" />
-                        <input id='senha' type="password" placeholder="Senha" className="campo" />
+                        <div id="campos">
+                            <input id='username' type="text" placeholder="Nome de usuário" className="campo" />
+                            <input id='senha' type="password" placeholder="Senha" className="campo" />
+                        </div>
                         <br/>
                         <span id='esqueciASenha'><u>Esqueci a senha</u></span>
                     </div>
 
                     <div className="botoes">
                         <div className="redesSociais">
-                            <img id='google' src={GoogleIcon} alt="google" width={45} height={50} />
-                            <img id='email' src={Email} alt="email" width={60} height={50} />
+                            <img id='googleIcon' src={GoogleIcon} alt="google" width={45} height={50} />
+                            <img id='emailIcon' src={Email} alt="email" width={60} height={50} />
                         </div>
-                        <button className="btnLogin">Login</button>
+                        <button id="btnSubmit" className="btnLogin">Login</button>
                     </div>
                 </form>
             </section>
