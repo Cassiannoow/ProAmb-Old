@@ -2,6 +2,7 @@ import React from "react";
 import './Login.css'
 import GoogleIcon from '../../../assets/img/icons/google_icon.png'
 import Email from '../../../assets/img/icons/email.png'
+import Conversor from '../../ConversorMD5/Converter'
 
 export default function Login() {
     let SelecionarLogin = () => {
@@ -54,6 +55,7 @@ export default function Login() {
             document.getElementById('esqueciASenha').classList.add('invisivel')
 
             document.getElementById('btnSubmit').innerHTML = 'Cadastrar'
+            
         }
     }
 
@@ -80,7 +82,7 @@ export default function Login() {
                             <img id='googleIcon' src={GoogleIcon} alt="google" width={45} height={50} />
                             <img id='emailIcon' src={Email} alt="email" width={60} height={50} />
                         </div>
-                        <button id="btnSubmit" className="btnLogin">Login</button>
+                        <button id="btnSubmit" className="btnLogin" >Login</button>
                     </div>
                 </form>
             </section>

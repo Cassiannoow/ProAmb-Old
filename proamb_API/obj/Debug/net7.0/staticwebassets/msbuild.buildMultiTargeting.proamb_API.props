@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\proamb_API.props" />
+</Project>
