@@ -41,7 +41,7 @@ export default function Header()
                 <section>
                     <Link to='/entrar'>
                         <div className='entrar'>
-                            <span>Entrar</span>
+                            <span id="entrar">Entrar</span>
                         </div>
                     </Link>
                 </section>

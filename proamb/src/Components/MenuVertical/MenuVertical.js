@@ -33,7 +33,7 @@ export default function MenuVertical(props)
                         <img src={Livro} alt='Livro' className='iconeLateral' />
                     </li>
                     <li id="inspirar">
-                        <Link to='/inspirar'>Inspirar</Link>
+                        <Link to='/forum'>Inspirar</Link>
                         <img src={Chat} alt='Chat' className='iconeLateral' />
                     </li>
                     <li id="sobre">

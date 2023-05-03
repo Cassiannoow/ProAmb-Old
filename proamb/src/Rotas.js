@@ -1,9 +1,10 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-import Forum from './Components/Telas/Forum/Forum'
-import Home from './Components/Telas/Home/Home'
+import Forum from './Components/Telas/Forum/Forum';
+import Home from './Components/Telas/Home/Home';
 import Login from "./Components/Telas/Login/Login";
+import Aprender from "./Components/Telas/Aprender/Aprender";
 
 export default function Rotas() {
     return(
@@ -18,6 +19,10 @@ export default function Rotas() {
 
             <Route path='/forum' element={
                 <Forum />
+            } />
+
+            <Route path='/aprender' element={
+                <Aprender />
             } />
         </Routes>
     )

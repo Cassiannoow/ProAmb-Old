@@ -1,4 +1,4 @@
-header{
+header {
     display: flex;
     font-family: 'Poppins', sans-serif;
     justify-content: space-around;
@@ -32,6 +32,13 @@ a{
 
 .item {
     margin-top: 35px;
+    transition: transform 500ms;
+    background-position: -250px center;
+}
+
+.item:hover, span:hover {
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
 }
 
 .entrar {
@@ -48,10 +55,12 @@ a{
     text-align: center;
 }
 
-.entrar span {
+.entrar #entrar {
     position: absolute;
     top: 50%;
     left: 50%;
     margin-left: -25px;
     margin-top: -13px;
+    transition: transform 500ms;
+    background-position: -250px center;
 }
