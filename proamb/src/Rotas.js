@@ -5,6 +5,7 @@ import Forum from './Components/Telas/Forum/Forum';
 import Home from './Components/Telas/Home/Home';
 import Login from "./Components/Telas/Login/Login";
 import Aprender from "./Components/Telas/Aprender/Aprender";
+import Perfil from "./Components/Telas/Perfil/perfil"
 
 export default function Rotas() {
     return(
@@ -23,6 +24,10 @@ export default function Rotas() {
 
             <Route path='/aprender' element={
                 <Aprender />
+            } />
+
+            <Route path='/perfil' element={
+                <Perfil />
             } />
         </Routes>
     )

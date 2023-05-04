@@ -9,13 +9,13 @@ export default function Header()
 {
     const [user,setUser] = useContext(meuContext)
 
-    useEffect(() => {
+    /*useEffect(() => {
         function exibirPerfil() {
+            let header = document.getElementById('navegacao')
+
             if(user != null)
             {
-                let header = document.getElementById('navegacao')
-                header.removeChild(header.lastChild)
-                header.removeChild(header.lastChild)
+                //header.removeChild(header.lastChild)
                 
                 let sectionIconPerfil = document.createElement('section')
                 sectionIconPerfil.className = 'item'
@@ -28,18 +28,20 @@ export default function Header()
                 imgPerfil.src = user.foto
                 imgPerfil.className = 'iconePerfil'
 
-                header.appendChild(sectionIconPerfil)
+                header.replaceChild(sectionIconPerfil, header.lastChild)
                 sectionIconPerfil.appendChild(lbUsername)
                 sectionIconPerfil.appendChild(imgPerfil)
             }
             else
             {
-                //fazer codigo pra quando usuario deslogar
+                let divEntrar = document.createElement('div')
+
+                header.replaceChild()//fazer codigo pra quando usuario deslogar
             }
         }
 
         exibirPerfil()
-    }, [user])
+    }, [user])*/
 
     return (
         <div className='header'>
@@ -69,7 +71,7 @@ export default function Header()
 
                 <h3 className='item'>
                     <Link to='/cadastrar'>
-                        Cadastrar - Se
+                        Descartar
                     </Link>
                 </h3>
 
