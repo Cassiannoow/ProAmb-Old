@@ -3,11 +3,11 @@ SELECT * FROM Posts
 SELECT * FROM Comentarios
 
 CREATE TABLE Usuarios(
-	Id INT IDENTITY PRIMARY KEY,
+	Id INT IDENTITY PRIMARY KEY, --talvez deixar o id unique, pois o .net sÃ³ consegue procurar por primary key
 	Nome VARCHAR(255) NOT NULL,
-	Email VARCHAR(100) NOT NULL,
+	Email VARCHAR(100) NOT NULL,  --depois mudar, pois a combinaÃ§Ã£o do email+senha deve ser UNIQUE
 	Senha VARCHAR(100) NOT NULL,
-	Username VARCHAR(20) NOT NULL,
+	Username VARCHAR(20) NOT NULL, --ou o username pode ser UNIQUE, nÃ£o sei, depois a gente fala sobre isso
 	Foto TEXT,
 	Biografia TEXT,
 	Cep VARCHAR(9) NOT NULL
@@ -15,7 +15,7 @@ CREATE TABLE Usuarios(
 
 INSERT INTO Usuarios (Nome, Email, Senha, Username, Foto,
 Biografia, Cep)
-VALUES ('João Pedro Cassiano de Brito', 'cassiannoow@gmail.com',
+VALUES ('Joï¿½o Pedro Cassiano de Brito', 'cassiannoow@gmail.com',
 'c3bfe49b7281e2e9ec75e910fecd3857', 'Jottape', 'https://i.pinimg.com/236x/6a/fb/e7/6afbe78b59e7f0294f3c73903291a6f0.jpg',
 'Salve, eu sou o jottape atualmente cursando PD no cotuca.', '13181-492')
 INSERT INTO Usuarios (Nome, Email, Senha, Username, Foto,
@@ -34,7 +34,7 @@ CREATE TABLE Posts(
 
 INSERT INTO Posts (IdUsuario, Imagem, Conteudo)
 VALUES (1, 'https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2021/06/9684_FC669FCC551EEE52-1.jpg?w=876&h=484&crop=1',
-'A MACONHA - Cannabis sativa é uma planta herbácea da família das Canabiáceas, amplamente cultivada em muitas partes do mundo')
+'A MACONHA - Cannabis sativa ï¿½ uma planta herbï¿½cea da famï¿½lia das Canabiï¿½ceas, amplamente cultivada em muitas partes do mundo')
 
 CREATE TABLE Comentarios(
 	Id INT IDENTITY PRIMARY KEY,
@@ -46,4 +46,4 @@ CREATE TABLE Comentarios(
 )
 
 INSERT INTO Comentarios (IdPost, IdUsuario, Conteudo)
-VALUES (1, 2, 'Caramba eu não sabia que maconha era usada em alguns medicamentos.')
+VALUES (1, 2, 'Caramba eu nï¿½o sabia que maconha era usada em alguns medicamentos.')

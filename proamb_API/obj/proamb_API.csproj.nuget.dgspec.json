@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documentos\\GitHub\\ProAmb\\proamb_APi\\proamb_API.csproj": {}
+    "C:\\Users\\Hugo\\Documents\\Cotuca\\PF2\\ProAmb\\proamb_API\\proamb_API.csproj": {}
   },
   "projects": {
-    "D:\\Documentos\\GitHub\\ProAmb\\proamb_APi\\proamb_API.csproj": {
+    "C:\\Users\\Hugo\\Documents\\Cotuca\\PF2\\ProAmb\\proamb_API\\proamb_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documentos\\GitHub\\ProAmb\\proamb_APi\\proamb_API.csproj",
+        "projectUniqueName": "C:\\Users\\Hugo\\Documents\\Cotuca\\PF2\\ProAmb\\proamb_API\\proamb_API.csproj",
         "projectName": "proamb_API",
-        "projectPath": "D:\\Documentos\\GitHub\\ProAmb\\proamb_APi\\proamb_API.csproj",
-        "packagesPath": "C:\\Users\\cassi\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos\\GitHub\\ProAmb\\proamb_APi\\obj\\",
+        "projectPath": "C:\\Users\\Hugo\\Documents\\Cotuca\\PF2\\ProAmb\\proamb_API\\proamb_API.csproj",
+        "packagesPath": "C:\\Users\\Hugo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hugo\\Documents\\Cotuca\\PF2\\ProAmb\\proamb_API\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\cassi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hugo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -78,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

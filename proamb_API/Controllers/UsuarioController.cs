@@ -14,10 +14,34 @@ namespace proamb_API.Controllers
             _context = context;
         }
 
+        //GET: api/usuarios
         [HttpGet]
         public ActionResult<List<Usuarios>> GetAll()
         {
             return _context.Usuarios.ToList();
+        }
+
+        //GET: api/usuarios/{username}
+        //Precisa alterar o db, pra colocar como primary key o username, ou como unique
+        /* Método correto
+        [HttpGet("{username}")]
+        public async Task<ActionResult<Usuarios>> GetUsuario(string username)
+        {
+            var usuario = await _context.Usuarios.FindAsync(username);
+
+            if(usuario == null)
+                return NotFound();
+            
+            return usuario;
+        }*/
+
+        //metodo provisorio
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Usuarios>> GetUsuario(int id)
+        {
+            var usuario = await _context.Usuarios.FindAsync(id);
+            
+            return usuario;
         }
     }
 }

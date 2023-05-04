@@ -1,10 +1,49 @@
-import React from "react";
-import './Login.css'
-import GoogleIcon from '../../../assets/img/icons/google_icon.png'
-import Email from '../../../assets/img/icons/email.png'
-import Conversor from '../../ConversorMD5/Converter'
+import React, { useState, useContext } from "react";
+import { meuContext } from "../../../Contexto";
+import './Login.css';
+import GoogleIcon from '../../../assets/img/icons/google_icon.png';
+import Email from '../../../assets/img/icons/email.png';
+import Conversor from '../../ConversorMD5/Converter';
+import axios from 'axios';
 
 export default function Login() {
+
+    const [user, setUser] = useContext(meuContext)
+
+    const urlAPI = 'http://localhost:5006/api/usuarios/'
+
+    const [ username, setUsername ] = useState('')
+    const [ senha, setSenha ] = useState('')
+    let usuario = {id:0,nome:"",email:"",senha:"",username:"",foto:"",biografia:"",cep:""}
+
+    
+
+    let logar = () => {
+        if(username != null && username != "")
+        {
+            axios(urlAPI + username).then(resp => { //coloquei tudo dentro do axios pq da diferença de tempo se colocar fora e user não atualiza (async e await não funcionou)
+                usuario = resp.data
+
+                if(usuario != null /*&&  usuario.username == username && usuario.senha == Conversor(senha)*/)
+                {
+                    setUser(usuario)
+                    window.location.replace(`/perfil/${usuario.username}`)
+                }
+                else
+                {
+                    let dadosIncorretos = document.createElement('span')
+                    dadosIncorretos.style.color = '#FFFFFF'
+                    dadosIncorretos.innerHTML = 'Username ou senha incorretos'
+                    document.getElementById('campos').appendChild(dadosIncorretos)
+                }
+            })   
+        }
+    }
+
+    let cadastrar = () => {
+
+    }
+
     let SelecionarLogin = () => {
         let lbLogin = document.querySelector('h3#btnLogin')
         let lbCadastro = document.querySelector('h3#btnCadastro')
@@ -15,15 +54,15 @@ export default function Login() {
             lbCadastro.classList.remove('selecionado')
             lbCadastro.classList.add('deselecionado')
 
-            let inputConfSenha = document.getElementById('campos').lastChild
-            document.getElementById('campos').removeChild(inputConfSenha)
-
-            let inputEmail = document.getElementById('campos').lastChild
-            document.getElementById('campos').removeChild(inputEmail)
+            let divCampos = document.getElementById('campos')
+            divCampos.removeChild(divCampos.lastChild)
+            divCampos.removeChild(divCampos.lastChild)
 
             document.getElementById('esqueciASenha').classList.remove('invisivel')
 
-            document.getElementById('btnSubmit').innerHTML = 'Login'
+            let btnSubmit = document.getElementById('btnSubmit')
+            btnSubmit.innerHTML = 'Login'
+            btnSubmit.onClick = logar
         }
     }
 
@@ -55,7 +94,7 @@ export default function Login() {
             document.getElementById('esqueciASenha').classList.add('invisivel')
 
             document.getElementById('btnSubmit').innerHTML = 'Cadastrar'
-            
+            document.getElementById('btnSubmit').onClick = cadastrar
         }
     }
 
@@ -70,8 +109,8 @@ export default function Login() {
 
                     <div className="campos">
                         <div id="campos">
-                            <input id='username' type="text" placeholder="Nome de usuário" className="campo" />
-                            <input id='senha' type="password" placeholder="Senha" className="campo" />
+                            <input id='username' type="text" placeholder="Nome de usuário" className="campo" onChange={({target}) => {setUsername(target.value)}} />
+                            <input id='senha' type="password" placeholder="Senha" className="campo" onChange={({target}) => {setSenha(target.value)}} />
                         </div>
                         <br/>
                         <span id='esqueciASenha'><u>Esqueci a senha</u></span>
@@ -82,7 +121,7 @@ export default function Login() {
                             <img id='googleIcon' src={GoogleIcon} alt="google" width={45} height={50} />
                             <img id='emailIcon' src={Email} alt="email" width={60} height={50} />
                         </div>
-                        <button id="btnSubmit" className="btnLogin" >Login</button>
+                        <div id="btnSubmit" className="btnLogin" onClick={logar}>Login</div>
                     </div>
                 </form>
             </section>
