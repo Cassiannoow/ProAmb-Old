@@ -7,14 +7,14 @@ import Header from './Components/Templates/Header';
 
 function App() {
 
-  const [ user, setUser ] = useState()
+  const [ user, setUser ] = useState({id:0,nome:"",email:"",senha:"",username:"",foto:"",biografia:"",cep:""})
 
   return (
     <BrowserRouter>
       <div className='App'>
         <meuContext.Provider value={[user,setUser]}>
           <Header />
-          <Rotas />
+          <Rotas user={[user, setUser]} />
         </meuContext.Provider>
       </div>
     </BrowserRouter>

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { meuContext } from "../../../Contexto";
 import './Login.css';
 import GoogleIcon from '../../../assets/img/icons/google_icon.png';
@@ -6,7 +6,7 @@ import Email from '../../../assets/img/icons/email.png';
 import Conversor from '../../ConversorMD5/Converter';
 import axios from 'axios';
 
-export default function Login() {
+export default function Login(props) {
 
     const [user, setUser] = useContext(meuContext)
 
@@ -14,27 +14,43 @@ export default function Login() {
 
     const [ username, setUsername ] = useState('')
     const [ senha, setSenha ] = useState('')
+    /*const initialState = {
+        usuario: {id: 0, nome: "", senha: "", email: "", username: "", },
+        lista: []
+    }*/
+
     let usuario = {id:0,nome:"",email:"",senha:"",username:"",foto:"",biografia:"",cep:""}
+
+    useEffect(() => {
+        if(user.id != 0)
+        {
+            console.log(user)
+            window.location.replace('/perfil/'+`${user.id}`)
+        }
+    }, [user])
 
     
 
-    let logar = () => {
+    let logar = async() => {
         if(username != null && username != "")
         {
             axios(urlAPI + username).then(resp => { //coloquei tudo dentro do axios pq da diferença de tempo se colocar fora e user não atualiza (async e await não funcionou)
                 usuario = resp.data
 
-                if(usuario != null /*&&  usuario.username == username && usuario.senha == Conversor(senha)*/)
+                console.log(usuario)
+                console.log(Conversor(senha))
+
+                if(usuario != null &&  usuario.id == username && usuario.senha == Conversor(senha))
                 {
                     setUser(usuario)
-                    window.location.replace(`/perfil/${usuario.username}`)
+                    console.log(user)
                 }
                 else
                 {
                     let dadosIncorretos = document.createElement('span')
                     dadosIncorretos.style.color = '#FFFFFF'
                     dadosIncorretos.innerHTML = 'Username ou senha incorretos'
-                    document.getElementById('campos').appendChild(dadosIncorretos)
+                    document.getElementById('campos').replaceChild(dadosIncorretos, document.getElementById('dadosIncorretos'))
                 }
             })   
         }
@@ -111,6 +127,7 @@ export default function Login() {
                         <div id="campos">
                             <input id='username' type="text" placeholder="Nome de usuário" className="campo" onChange={({target}) => {setUsername(target.value)}} />
                             <input id='senha' type="password" placeholder="Senha" className="campo" onChange={({target}) => {setSenha(target.value)}} />
+                            <span id='dadosIncorretos'></span>
                         </div>
                         <br/>
                         <span id='esqueciASenha'><u>Esqueci a senha</u></span>
