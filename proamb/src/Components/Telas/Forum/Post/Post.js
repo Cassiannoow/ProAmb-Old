@@ -7,7 +7,9 @@ const urlAPI = 'http://localhost:5006/api/'
 
 const initialState = {
     comentario: {id: 0, idPost: 0, idUsuario: 0, conteudo:''},
-    comentarios: []
+    comentarios: [],
+    usuario: {id:0,nome:"",email:"",senha:"",username:"",foto:"",biografia:"",cep:"" },
+    lista: []
 }
 
 export default class Post extends Component {
@@ -17,11 +19,14 @@ export default class Post extends Component {
         axios(urlAPI+ 'comentarios').then(resp => {
             this.setState({comentarios: resp.data})
         })
+        axios(urlAPI + 'usuarios').then(resp => {
+            this.setState({ lista: resp.data })
+        })
     }
 
     render () { return(
         <div className="post">
-            <section className="artigo">
+                <section className="artigo">
                     <div className="temaArtigo">
                         <img id="imagemArtigo" src={this.props.imagem}/*"https://surfguru.space/2018/09/180903100345000000.jpg"*/ alt="tartaruga" />
                         <br/>
@@ -34,14 +39,35 @@ export default class Post extends Component {
 
                 <section className="comentarios">
                     {this.state.comentarios.map( 
-                        (comentario) => 
-                            <div className="comentar" id="cardComentarios">
-                                    <div className="mensagem">
-                                        {comentario.conteudo}
-                                    </div>
-                                 <br/>
-                            </div>
-                        )}
+                        (comentario) =>
+                        {
+                            if(this.props.idPost == comentario.idPost)
+                            {
+                                return(
+                                <div className="comentar" id="cardComentarios">
+                                    {this.state.lista.map(
+                                        (usuarios) => 
+                                        {
+                                            if(comentario.idUsuario == usuarios.id)
+                                            {
+                                                return(
+                                                    <div className="comentarioIndividual">
+                                                        <img id="fotoUsuario" src={usuarios.foto} />
+                                                        <div className="dados">
+                                                            <h2>{usuarios.username}</h2>
+                                                            <p className="mensagem">{comentario.conteudo}</p>
+                                                        </div>
+                                                    </div>
+                                                )
+                                            }
+                                        }
+                                    )}
+                                    <br/>
+                                </div>)
+                            }
+                        }
+                            
+                    )}
                 </section>
             </div>)
     }

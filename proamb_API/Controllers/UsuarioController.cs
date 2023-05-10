@@ -23,25 +23,25 @@ namespace proamb_API.Controllers
 
         //GET: api/usuarios/{username}
         //Precisa alterar o db, pra colocar como primary key o username, ou como unique
-        /* Método correto
+        //Método correto
         [HttpGet("{username}")]
         public async Task<ActionResult<Usuarios>> GetUsuario(string username)
         {
-            var usuario = await _context.Usuarios.FindAsync(username);
+            var usuario =  _context.Usuarios.Where(u => u.Username == username).FirstOrDefault();
 
             if(usuario == null)
                 return NotFound();
             
             return usuario;
-        }*/
+        }
 
         //metodo provisorio
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Usuarios>> GetUsuario(int id)
+        /*[HttpGet("{id}")]
+        public async Task<ActionResult<Usuarios>> GetUsuarioById(int id)
         {
             var usuario = await _context.Usuarios.FindAsync(id);
             
             return usuario;
-        }
+        }*/
     }
 }

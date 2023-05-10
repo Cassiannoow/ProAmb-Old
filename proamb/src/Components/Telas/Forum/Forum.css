@@ -2,6 +2,8 @@
     display: grid;
     grid-template-areas:
     "artigo comentarios";
+    display: flex;
+    flex-direction: column;
 }
 
 .artigo {
@@ -28,20 +30,7 @@
     margin-top: 30px;
 }
 
-.comentarios {
-    grid-area: "comentarios";
-    overflow: hidden;
-}
 
-#cardComentarios {
-    margin-top: 50px;
-    margin-right: 60px;
-    width: 90%;
-    height: 520px;
-    background-color: #DEF2D5;
-    color: white;
-    border-radius: 10px;
-}
 
 .imagem {
     background-color: white;

@@ -21,12 +21,18 @@ export default function Perfil() {
     }, [])
     
     return (
-            <article>
-                <><p id='nome'> {usuario.nome} </p>
-                <p id='username'> {usuario.username} </p>
-                <p id='email'> {usuario.email} </p>
-                <p id='bio'> {usuario.biografia} </p>
-                <img src={usuario.foto} alt="" id="foto" />
+            <article className="perfil">
+                <>
+                    <img src={usuario.foto} alt="" id="foto" />
+                    <div className="nomeUsuario">
+                        <h1 id='nome'> {usuario.nome} </h1>
+                    </div>
+                    <h3 id='username'> @{usuario.username} </h3>
+                    <p id='email'> {usuario.email} </p>
+                    
+                    <div className="biografia">
+                        <p id='bio'><b>{usuario.biografia}</b></p>
+                    </div>
                 </>
             </article>
     )
