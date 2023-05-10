@@ -35,6 +35,9 @@ CREATE TABLE Posts(
 INSERT INTO Posts (IdUsuario, Imagem, Conteudo)
 VALUES (1, 'https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2021/06/9684_FC669FCC551EEE52-1.jpg?w=876&h=484&crop=1',
 'A MACONHA - Cannabis sativa � uma planta herb�cea da fam�lia das Canabi�ceas, amplamente cultivada em muitas partes do mundo')
+INSERT INTO Posts (IdUsuario, Imagem, Conteudo)
+VALUES (2, 'https://eizkd332mb3.exactdn.com/wp-content/uploads/2022/09/GP1SZPHR_.jpg?strip=all&lossy=1&ssl=1',
+'QUEIMADAS NA AMAZONIA - As queimadas na amazonia tem se tornado cada vez mais constantes')
 
 CREATE TABLE Comentarios(
 	Id INT IDENTITY PRIMARY KEY,
@@ -47,3 +50,11 @@ CREATE TABLE Comentarios(
 
 INSERT INTO Comentarios (IdPost, IdUsuario, Conteudo)
 VALUES (1, 2, 'Caramba eu n�o sabia que maconha era usada em alguns medicamentos.')
+INSERT INTO Comentarios (IdPost, IdUsuario, Conteudo)
+VALUES (2, 1, 'Culpa do capitalismo')
+INSERT INTO Comentarios (IdPost, IdUsuario, Conteudo)
+VALUES (2, 2, 'Culpa do Celio')
+
+update usuarios
+set foto='https://ruined.dev/_next/image?url=https%3A%2F%2Fddragon.leagueoflegends.com%2Fcdn%2Fimg%2Fchampion%2Ftiles%2FNeeko_0.jpg&w=640&q=75'
+where id=2
