@@ -33,7 +33,7 @@ export default function Rotas(props) {
                     <Aprender />
                 } />
 
-                <Route path='/perfil/:id' element={
+                <Route path='/perfil/:username' element={
                     <meuContext.Provider value={[user,setUser]}>
                         <Perfil user={props.user} />
                     </meuContext.Provider>

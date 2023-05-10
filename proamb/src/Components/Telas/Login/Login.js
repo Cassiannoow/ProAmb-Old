@@ -40,11 +40,10 @@ export default function Login(props) {
                 console.log(usuario)
                 console.log(Conversor(senha))
 
-                if(usuario != null &&  usuario.username == username && usuario.senha == Conversor(senha))
+                if(usuario != null && usuario.username == username && usuario.senha == Conversor(senha))
                 {
                     setUser(usuario)
                     console.log(user)
-                    window.location.replace('/perfil/'+`${user.username}`)
                 }
                 else
                 {
