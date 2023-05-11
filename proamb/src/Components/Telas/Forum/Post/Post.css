@@ -3,6 +3,11 @@
     grid-template-areas:
     "artigo comentarios";
     height: 90vh;
+    background-color: rgb(84, 131, 78);
+    margin-bottom: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 50px;
 }
 
 #telaForum {
@@ -40,6 +45,7 @@
 
 .comentarios {
     margin-top: 60px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     overflow-y: auto;

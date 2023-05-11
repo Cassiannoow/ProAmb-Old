@@ -22,6 +22,7 @@ export default function Login(props) {
     let usuario = {id:0,nome:"",email:"",senha:"",username:"",foto:"",biografia:"",cep:""}
 
     useEffect(() => {
+        document.getElementById('entrar').innerHTML = 'Entrar'
         if(user.id != 0)
         {
             console.log(user)

@@ -70,7 +70,7 @@ export default function Header()
                 </h3>
 
                 <h3 className='item'>
-                    <Link to='/cadastrar'>
+                    <Link to='/mapa-proamb'>
                         Descartar
                     </Link>
                 </h3>
