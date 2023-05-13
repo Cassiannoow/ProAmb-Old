@@ -1,7 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using proamb_API.Data;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
+
+ConfigurationManager configuration = builder.Configuration;
 
 //allow CORS
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins"; 
@@ -18,6 +23,29 @@ builder.Services.AddCors(options =>
         builder.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost");
         builder.SetIsOriginAllowed(origin => true);
     });
+});
+
+// Adding Authentication
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+
+// Adding Jwt Bearer
+.AddJwtBearer(options =>
+{
+    options.SaveToken = true;
+    options.RequireHttpsMetadata = false;
+    options.TokenValidationParameters = new TokenValidationParameters()
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidAudience = configuration["JWT:ValidAudience"],
+        ValidIssuer = configuration["JWT:ValidIssuer"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Secret"]))
+    };
 });
 
 builder.Services.AddControllers();
@@ -43,6 +71,10 @@ app.UseHttpsRedirection();
 
 //Allow CORS
 app.UseCors(MyAllowSpecificOrigins);
+
+// Authentication & Authorization
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.UseAuthorization();
 

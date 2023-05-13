@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { Component, useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { meuContext } from "../../../Contexto";
 import './perfil.css'
 
@@ -34,33 +34,48 @@ export default function Perfil() {
                 <div className='informacoes_pessoais'>
                     <img src={usuario.foto} alt="" id="foto" />
                     <div className="nomeUsuario">
-                        <h1 id='nome'> {usuario.nome} </h1>
+                        <h1 id='username'> @{usuario.username} </h1>
                     </div>
-                    <h3 id='username'> @{usuario.username} </h3>
-                    <p id='email'> {usuario.email} </p>
+                    <h3 id='nome'> NOME: {usuario.nome} </h3>
+                    <h3 id='email'> EMAIL: {usuario.email} </h3>
                 </div>
-
-                <div className='amigos'>
-                    <h3>Seus Amigos</h3>
-                    <div id='icones_de_usuario'>
-                        {
-                         amigos.lista.map((amigo) => {
-                            if(amigo.id != usuario.id)
-                            return(
-                                <div className="perfil-amigo">
-                                    <img src={amigo.foto} alt='foto do amigo' className='foto_do_amigo' />
-                                    <p>{amigo.username}</p>
-                                </div>
-                            )
-                         })
-                        }
+                
+                
+                <div>
+                    <p className="txtFora">SEUS AMIGOS:</p>
+                    <div className='amigos'>
+                        <div id='icones_de_usuario'>
+                            {
+                                amigos.lista.map((amigo) => {
+                                    function redirect(){
+                                        window.location.replace('/perfil/'+`${amigo.username}`)
+                                        console.log('/perfil/'+`${amigo.username}`)
+                                    }
+                                    if(amigo.id != usuario.id)
+                                    {
+                                        return(
+                                            <div className="perfil-amigo">
+                                                <Link onClick={redirect}>
+                                                    <img src={amigo.foto} alt='foto do amigo' className='foto_do_amigo' />
+                                                    <h3 className="nomeAmigo">{amigo.username}</h3>
+                                                </Link>
+                                            </div>
+                                        )
+                                    }
+                                    
+                                })
+                            }
+                        </div>
                     </div>
                 </div>
-
-                <div className="biografia">
-                    <h3>Biografia</h3>
-                    <p id='bio'>{usuario.biografia}</p>
+                
+                <div>
+                    <p className="txtFora">BIOGRAFIA:</p>
+                    <div className="biografia">
+                        <p id='bio'>{usuario.biografia}</p>
+                    </div>
                 </div>
+                
             </article>
     )
 }

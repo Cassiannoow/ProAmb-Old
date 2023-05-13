@@ -378,3 +378,4 @@ C:\Users\Hugo\Desktop\ProAmb\proamb_API\obj\Debug\net7.0\refint\proamb_API.dll
 C:\Users\Hugo\Desktop\ProAmb\proamb_API\obj\Debug\net7.0\proamb_API.pdb
 C:\Users\Hugo\Desktop\ProAmb\proamb_API\obj\Debug\net7.0\proamb_API.genruntimeconfig.cache
 C:\Users\Hugo\Desktop\ProAmb\proamb_API\obj\Debug\net7.0\ref\proamb_API.dll
+D:\Documentos\GitHub\ProAmb\proamb_API\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

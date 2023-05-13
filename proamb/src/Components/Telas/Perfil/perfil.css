@@ -1,11 +1,11 @@
 .perfil {
-    background-color: #A6F8BA;
+    background-color: #6CBA7F;
     width: 70vw;
     text-align: center;
     margin: auto;
     margin-top: 150px;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 25px;
     display: grid;
     grid-template-areas: 
     "info amigos"
@@ -14,6 +14,7 @@
 }
 
 #foto {
+    border: solid 5px white;
     border-radius: 100%;
     width: 300px;
 }
@@ -21,24 +22,31 @@
 .nomeUsuario {
     background-color: inherit;
     width: 450px;
-    margin: auto;
+    margin: auto;font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+
 }
 
-.biografia {
-    background-color: white;
+.biografia{
+    color: #FFFFFF;
+    background-color: #70AB7E;
     grid-area: "descricao";
     grid-column-start: 2;
-    margin-left: 30px;
+    margin: 15px;
     border-radius: 20px;
     font-weight: 600;
 }
 
 .amigos {
     grid-area: "amigos";
-    margin-left: 30px;
+    margin: 15px;
+    background-color: #70AB7E;
+    border-radius: 25px;
 }
 
-.informacoes_pessoais {
+.informacoes_pessoais{
     background-color: rgb(213, 251, 209);
     grid-area: "info";
     grid-row-start: 1;
@@ -52,9 +60,33 @@
     width: 150px;
     height: 150px;
     border-radius: 100px;
-    margin-right: 10px;
+    margin: 15px;
+    border: solid 5px white;
 }
 
 #icones_de_usuario{
     display: flex;
+    justify-content:space-around;
+    padding: 15px;
+}
+
+p.txtFora {
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+    margin-left: 15px;
+}
+.perfil-amigo{
+    border-radius: 25px;
+    margin: 10px;
+}
+h3.nomeAmigo{
+    margin: 0;
+    font-size: 24px;
+}
+
+.biografia p{
+    padding: 15px;
 }
