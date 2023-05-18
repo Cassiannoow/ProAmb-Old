@@ -1,0 +1,48 @@
+#telaDescartar {
+    display: grid;
+    grid-template-areas:
+    "buscar lugares";
+    display: flex;
+    flex-direction: column;
+    background-color: #6CBA7F;
+    width: 90vw;
+    height: 75vh;
+    margin: auto;
+    margin-top: 160px;
+    border-radius: 30px;
+}
+
+.buscar {
+    grid-area: "buscar";
+    margin-top: 60px;
+    margin-left: 90px;
+    overflow: hidden;
+    color: white;
+    font-size: 26px;
+    width: 40vw;
+}
+
+.lugares {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #DEF2D5;
+    width: 42.5vw;
+    border-radius: 20px;
+}
+
+#tituloBuscar {
+    color: #DEF2D5;
+}
+
+#btnBuscarNoMapa {
+    width: 200px;
+    height: 80px;
+    border: none;
+    background-color: #31733C;
+    color: #DEF2D5;
+    border-radius: 20px;
+}

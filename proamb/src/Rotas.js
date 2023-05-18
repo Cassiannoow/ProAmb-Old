@@ -5,6 +5,7 @@ import Forum from './Components/Telas/Forum/Forum';
 import Home from './Components/Telas/Home/Home';
 import Login from "./Components/Telas/Login/Login";
 import Aprender from "./Components/Telas/Aprender/Aprender";
+import Descartar from "./Components/Telas/Descartar/Descartar"
 import Perfil from "./Components/Telas/Perfil/perfil"
 import { meuContext } from "./Contexto";
 
@@ -31,6 +32,10 @@ export default function Rotas(props) {
 
                 <Route path='/aprender' element={
                     <Aprender />
+                } />
+
+                <Route path='/mapa-proamb' element={
+                    <Descartar />
                 } />
 
                 <Route path='/perfil/:username' element={

@@ -1,6 +1,5 @@
 import React, { Component, useEffect } from "react";
 import './Forum.css';
-import BarraDeComentario from '../../BarraDeComentario/BarraDeComentario'
 import Post from './Post/Post'
 import axios from "axios";
 

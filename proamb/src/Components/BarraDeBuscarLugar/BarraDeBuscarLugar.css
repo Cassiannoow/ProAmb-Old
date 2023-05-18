@@ -1,0 +1,20 @@
+#divBuscarLugar {
+    margin-top: 35px;
+    background: #FFFAFA;
+    width:  233px;
+    height: 31px;
+}
+
+#txtBuscarLugar {
+    float:left;
+    padding-left: 10px;
+    font-size:18px;
+    border:none;
+    height: 30px;
+    width: 500px;
+    border-radius: 10px;
+}
+
+input:focus{
+    outline: 0;
+}
