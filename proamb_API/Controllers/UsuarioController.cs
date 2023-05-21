@@ -21,35 +21,6 @@ namespace proamb_API.Controllers
             _context = context;
         }
 
-        [HttpPost]
-        [Route("login")]
-        [AllowAnonymous]
-        public ActionResult<dynamic> Login([FromBody] Usuarios usuario)
-        {
-            var user = _context.Usuarios.Where(u => u.Username == usuario.Username 
-            && u.Senha == usuario.Senha).FirstOrDefault();
-
-            if (user == null)
-                return Unauthorized("Usuário ou senha inválidos");
-
-            var authClaims = new List<Claim> {
-                new Claim(ClaimTypes.Name, user.Username),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-            };
-
-            var token = GetToken(authClaims);
-            user.Senha = "";
-            return Ok(new
-            {
-                token = new JwtSecurityTokenHandler().WriteToken(token),
-                user = user
-            });
-        }
-
-        [HttpGet("{username}/authenticated")]
-        [Authorize]
-        public string Authenticated() => String.Format("Autenticado - {0}", User.Identity.Name);
-
         //GET: api/usuarios
         [HttpGet]
         public ActionResult<List<Usuarios>> GetAll()
@@ -57,9 +28,6 @@ namespace proamb_API.Controllers
             return _context.Usuarios.ToList();
         }
 
-        //GET: api/usuarios/{username}
-        //Precisa alterar o db, pra colocar como primary key o username, ou como unique
-        //Método correto
         [HttpGet("{username}")]
         public async Task<ActionResult<Usuarios>> GetUsuario(string username)
         {
@@ -68,32 +36,68 @@ namespace proamb_API.Controllers
             return usuario;
         }
 
-        //metodo provisorio
-        /*[HttpGet("{id}")]
-        public async Task<ActionResult<Usuarios>> GetUsuarioById(int id)
+        [HttpPost]
+        public async Task<ActionResult> post(Usuarios model)
         {
-            var usuario = await _context.Usuarios.FindAsync(id);
-            
-            return usuario;
-        }*/
+            try {
+                _context.Usuarios.Add(model);
+                if( await _context.SaveChangesAsync() == 1)
+                {
+                    return Created($"/api/usuario/{model.Username}", model);
+                }
+            }
+            catch
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Falha no acesso ao banco de dados.");
+            }
 
-        private JwtSecurityToken GetToken(List<Claim> authClaims)
+            return BadRequest();
+        }
+
+        [HttpPut("{idUsuario}")]
+        public async Task<ActionResult> put(int idUsuario, Usuarios usuarioAlt)
         {
-            var authSigningKey = new
+            try {
+                var result = await _context.Usuarios.FindAsync(idUsuario);
+                if(idUsuario != result.Id)
+                {
+                    return BadRequest();
+                }
 
-            SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
+                result.Nome = usuarioAlt.Nome;
+                result.Email = usuarioAlt.Email;
+                result.Senha = usuarioAlt.Senha;
+                result.Username = usuarioAlt.Username;
+                result.Foto = usuarioAlt.Foto;
+                result.Biografia = usuarioAlt.Biografia;
+                result.Cep = usuarioAlt.Cep;
+                await _context.SaveChangesAsync();
+                return Created($"/api/usuario/{usuarioAlt.id}", usuarioAlt);
+            }
+            catch
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Falha no acesso ao banco de dados.");
+            }
+        }
 
-            var token = new JwtSecurityToken(
-                expires: DateTime.Now.AddHours(3),
-                issuer: _configuration["JWT:ValidIssuer"],
-                audience: _configuration["JWT:ValidAudience"],
-                claims: authClaims,
-                signingCredentials: new SigningCredentials(authSigningKey,
-
-                SecurityAlgorithms.HmacSha256)
-
-            );
-            return token;
+        [HttpDelete("{idUsuario}")]
+        public async Task<ActionResult> delete(int idUsuario)
+        {
+            try {
+                var usuario = await _context.Usuarios.FindAsync(idUsuario);
+                if(usuario == null)
+                {
+                    return NotFound();
+                }
+                
+                _context.Remove(usuario);
+                await _context.SaveChangesAsync();
+                return NoContent();
+            }
+            catch
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Falha no acesso ao banco de dados.");
+            }
         }
     }
 }

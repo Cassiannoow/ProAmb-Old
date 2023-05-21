@@ -1,25 +1,18 @@
-import React, { useState, useContext, useEffect } from "react";
-import { meuContext } from "../../../Contexto";
+import React, { useState, useEffect } from "react";
 import './Login.css';
 import GoogleIcon from '../../../assets/img/icons/google_icon.png';
 import Email from '../../../assets/img/icons/email.png';
 import Conversor from '../../ConversorMD5/Converter';
 import axios from 'axios';
 
-export default function Login(props) {
-
-    const [user, setUser] = useContext(meuContext)
+export default function Login() {
 
     const urlAPI = 'http://localhost:5006/api/usuarios/'
 
     const [ username, setUsername ] = useState('')
     const [ senha, setSenha ] = useState('')
-    /*const initialState = {
-        usuario: {id: 0, nome: "", senha: "", email: "", username: "", },
-        lista: []
-    }*/
 
-    let usuario = {id:0,nome:"",email:"",senha:"",username:"",foto:"",biografia:"",cep:""}
+    const [usuario, setUsuario] = useState({id:0,nome:"",email:"",senha:"",username:"",foto:"",biografia:"",cep:""})
 
     useEffect(() => {
         document.getElementById('entrar').innerHTML = 'Entrar'
@@ -36,10 +29,7 @@ export default function Login(props) {
         if(username != null && username != "")
         {
             axios(urlAPI + username).then(resp => { //coloquei tudo dentro do axios pq da diferença de tempo se colocar fora e user não atualiza (async e await não funcionou)
-                usuario = resp.data
-
-                console.log(usuario)
-                console.log(Conversor(senha))
+                setUsuario(resp.data)
 
                 if(usuario != null && usuario.username == username && usuario.senha == Conversor(senha))
                 {
