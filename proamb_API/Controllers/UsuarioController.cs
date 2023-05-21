@@ -72,7 +72,7 @@ namespace proamb_API.Controllers
                 result.Biografia = usuarioAlt.Biografia;
                 result.Cep = usuarioAlt.Cep;
                 await _context.SaveChangesAsync();
-                return Created($"/api/usuario/{usuarioAlt.id}", usuarioAlt);
+                return Created($"/api/usuario/{usuarioAlt.Id}", usuarioAlt);
             }
             catch
             {

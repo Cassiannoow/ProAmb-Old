@@ -46,6 +46,11 @@ namespace proamb_API.Controllers
             });
         }
 
+        [HttpGet]
+        [Route("anonymous")]
+        [AllowAnonymous]
+        public string Anonymous() => "Anônimo";
+
         [HttpGet("{username}/authenticated")]
         [Authorize]
         public string Authenticated() => String.Format("Autenticado - {0}", User.Identity.Name);

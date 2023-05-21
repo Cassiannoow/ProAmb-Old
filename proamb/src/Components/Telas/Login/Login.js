@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router';
 import './Login.css';
 import GoogleIcon from '../../../assets/img/icons/google_icon.png';
 import Email from '../../../assets/img/icons/email.png';
 import Conversor from '../../ConversorMD5/Converter';
 import axios from 'axios';
+import AuthService from "../../../services/AuthService";
 
 export default function Login() {
 
@@ -11,44 +13,49 @@ export default function Login() {
 
     const [ username, setUsername ] = useState('')
     const [ senha, setSenha ] = useState('')
+    const [ message, setMessage ] = useState('')
+    const navigate = useNavigate();
 
-    const [usuario, setUsuario] = useState({id:0,nome:"",email:"",senha:"",username:"",foto:"",biografia:"",cep:""})
+    let handleSubmitLogin = async(evento) => {
+        evento.preventDefault();
+        const userForm = { username, senha };
 
-    useEffect(() => {
-        document.getElementById('entrar').innerHTML = 'Entrar'
-        if(user.id != 0)
-        {
-            console.log(user)
-            window.location.replace('/perfil/'+`${user.username}`)
-        }
-    }, [user])
-
-    
-
-    let logar = async() => {
-        if(username != null && username != "")
-        {
-            axios(urlAPI + username).then(resp => { //coloquei tudo dentro do axios pq da diferença de tempo se colocar fora e user não atualiza (async e await não funcionou)
-                setUsuario(resp.data)
-
-                if(usuario != null && usuario.username == username && usuario.senha == Conversor(senha))
-                {
-                    setUser(usuario)
-                    console.log(user)
+        if(!username || !senha) {
+            setMessage("Preencha o username e a senha para continuar!")
+        } else {
+            AuthService.login(username, senha).then(
+                () => {
+                    console.log("localStorage: " + localStorage.getItem("user"));
+                    navigate("/perfil/" + username);
+                    window.location.reload();
+                },
+                (error) => {
+                    const resMessage = (error.response &&
+                        error.response.data &&
+                        error.response.data.message ) ||
+                        error.message || error.toString();
+                    setMessage(resMessage);
                 }
-                else
-                {
-                    let dadosIncorretos = document.createElement('span')
-                    dadosIncorretos.style.color = '#FFFFFF'
-                    dadosIncorretos.innerHTML = 'Username ou senha incorretos'
-                    document.getElementById('campos').replaceChild(dadosIncorretos, document.getElementById('dadosIncorretos'))
-                }
-            })   
+            );
         }
     }
 
-    let cadastrar = () => {
+    let handleSubmitCadastrar = () => { //incompleto, talvez eu crie outra pagina para cadastro
+        evento.preventDefault();
 
+        nomeUsuario = document.getElementById();
+
+        axios.post(urlAPI, {
+            nomeUsuario,
+            emailUsuario,
+            senhaUsuario,
+            usernameUsuario,
+            fotoUsuario,
+            biografiaUsuario,
+            cepUsuario
+        }).then((response) => {
+
+        })
     }
 
     let SelecionarLogin = () => {
@@ -69,7 +76,7 @@ export default function Login() {
 
             let btnSubmit = document.getElementById('btnSubmit')
             btnSubmit.innerHTML = 'Login'
-            btnSubmit.onClick = logar
+            btnSubmit.onClick = handleSubmitLogin
         }
     }
 
@@ -101,7 +108,7 @@ export default function Login() {
             document.getElementById('esqueciASenha').classList.add('invisivel')
 
             document.getElementById('btnSubmit').innerHTML = 'Cadastrar'
-            document.getElementById('btnSubmit').onClick = cadastrar
+            document.getElementById('btnSubmit').onClick = handleSubmitCadastrar
         }
     }
 
@@ -116,8 +123,8 @@ export default function Login() {
 
                     <div className="campos">
                         <div id="campos">
-                            <input id='username' type="text" placeholder="Nome de usuário" className="campo" onChange={({target}) => {setUsername(target.value)}} />
-                            <input id='senha' type="password" placeholder="Senha" className="campo" onChange={({target}) => {setSenha(target.value)}} />
+                            <input id='username' type="text" value={username} placeholder="Nome de usuário" className="campo" onChange={({target}) => {setUsername(target.value); setMessage('')}} />
+                            <input id='senha' type="password" value={senha} placeholder="Senha" className="campo" onChange={({target}) => {setSenha(target.value); setMessage('')}} />
                             <span id='dadosIncorretos'></span>
                         </div>
                         <br/>
@@ -129,7 +136,7 @@ export default function Login() {
                             <img id='googleIcon' src={GoogleIcon} alt="google" width={45} height={50} />
                             <img id='emailIcon' src={Email} alt="email" width={60} height={50} />
                         </div>
-                        <div id="btnSubmit" className="btnLogin" onClick={logar}>Login</div>
+                        <div id="btnSubmit" className="btnLogin" onClick={handleSubmitLogin}>Login</div>
                     </div>
                 </form>
             </section>
