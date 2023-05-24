@@ -5,9 +5,10 @@ import Forum from './Components/Telas/Forum/Forum';
 import Home from './Components/Telas/Home/Home';
 import Login from "./Components/Telas/Login/Login";
 import Aprender from "./Components/Telas/Aprender/Aprender";
-import Descartar from "./Components/Telas/Descartar/Descartar"
-import Perfil from "./Components/Telas/Perfil/perfil"
-
+import Descartar from "./Components/Telas/Descartar/Descartar";
+import Perfil from "./Components/Telas/Perfil/perfil";
+import Cadastro from "./Components/Telas/Login/Cadastro";
+ 
 export default function Rotas() {
 
     return(
@@ -18,6 +19,10 @@ export default function Rotas() {
 
                 <Route path='/entrar' element={
                     <Login />
+                } />
+
+                <Route path='/cadastro' element={
+                    <Cadastro />
                 } />
 
                 <Route path='/forum' element={

@@ -31,7 +31,7 @@ namespace proamb_API.Controllers
         [HttpGet("{username}")]
         public async Task<ActionResult<Usuarios>> GetUsuario(string username)
         {
-            var usuario = _context.Usuarios.Where(u => u.Username == username).FirstOrDefault();
+            var usuario = _context.Usuarios.Where(u =>  u.Username == username).FirstOrDefault();
 
             return usuario;
         }

@@ -1,30 +1,30 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from 'react-router';
-import { Link } from 'react-router-dom'
-import './Login.css';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom" ;
 import GoogleIcon from '../../../assets/img/icons/google_icon.png';
 import Email from '../../../assets/img/icons/email.png';
 import Conversor from '../../ConversorMD5/Converter';
-import axios from 'axios';
 import AuthService from "../../../services/AuthService";
 
-export default function Login() {
+export default function Cadastro() {
 
-    const urlAPI = 'http://localhost:5006/api/usuarios/'
+    const [message, setMessage] = useState('')
 
-    const [ username, setUsername ] = useState('')
-    const [ senha, setSenha ] = useState('')
-    const [ message, setMessage ] = useState('')
+    const [username, setUsername] = useState('')
+    const [senha, setSenha] = useState('')
+    const [email, setEmail] = useState('')
+    const [nome, setNome] = useState('')
+    const [cep, setCep] = useState('')
+
     const navigate = useNavigate();
 
-    let handleSubmitLogin = async(evento) => {
+    let handleSubmitCadastro = async(evento) => {
         evento.preventDefault();
-        const userForm = { username, senha };
+        const userForm = { nome, username, senha, email, cep };
 
-        if(!username || !senha) {
-            setMessage("Preencha o username e a senha para continuar!")
+        if(!username || !senha || !nome || !email || !cep) {
+            setMessage("Preencha todos os dados para continuar!")
         } else {
-            AuthService.login(username, Conversor(senha)).then(
+            AuthService.cadastrar(nome, username, senha, email, cep).then(
                 () => {
                     console.log("localStorage: " + localStorage.getItem("user"));
                     navigate("/perfil/" + username);
@@ -41,19 +41,22 @@ export default function Login() {
         }
     }
 
-    return(
+    return (
         <article id="telaLogin">
             <section className="login">
                 <form>
                     <div className="cabecalho">
-                        <Link to="/login"><h3 id='btnLogin' className="opcao selecionado">LOGIN</h3></Link>
-                        <h3 id='btnCadastro' className="opcao deselecionado">CADASTRO</h3>
+                        <h3 id='btnLogin' className="opcao deselecionado">LOGIN</h3>
+                        <Link to="/cadastro"><h3 id='btnCadastro' className="opcao selecionada">CADASTRO</h3></Link>
                     </div>
 
                     <div className="campos">
                         <div id="campos">
+                            <input id='nome' type="text" value={nome} placeholder="Nome completo" className="campo" onChange={({target}) => {setNome(target.value); setMessage('')}} />
                             <input id='username' type="text" value={username} placeholder="Nome de usuário" className="campo" onChange={({target}) => {setUsername(target.value); setMessage('')}} />
                             <input id='senha' type="password" value={senha} placeholder="Senha" className="campo" onChange={({target}) => {setSenha(target.value); setMessage('')}} />
+                            <input id='email' type="email" value={email} placeholder="Email" className="campo" onChange={({target}) => {setEmail(target.value); setMessage('')}} />
+                            <input id='cep' type="text" value={cep} placeholder="CEP" className="campo" onChange={({target}) => {setCep(target.value); setMessage('')}} />
                             <span id='dadosIncorretos'>{message}</span>
                         </div>
                         <br/>
@@ -65,7 +68,7 @@ export default function Login() {
                             <img id='googleIcon' src={GoogleIcon} alt="google" width={45} height={50} />
                             <img id='emailIcon' src={Email} alt="email" width={60} height={50} />
                         </div>
-                        <div id="btnSubmit" className="btnLogin" onClick={handleSubmitLogin}>Login</div>
+                        <div id="btnSubmit" className="btnLogin" onClick={handleSubmitCadastro}>Cadastrar</div>
                     </div>
                 </form>
             </section>

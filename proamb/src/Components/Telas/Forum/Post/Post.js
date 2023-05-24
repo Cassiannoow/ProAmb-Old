@@ -44,14 +44,14 @@ export default class Post extends Component {
                             if(this.props.idPost == comentario.idPost)
                             {
                                 return(
-                                <div className="comentar" id="cardComentarios">
+                                <div className="comentar" id="cardComentarios" key={comentario.id}>
                                     {this.state.lista.map(
                                         (usuarios) => 
                                         {
                                             if(comentario.idUsuario == usuarios.id)
                                             {
                                                 return(
-                                                    <div className="comentarioIndividual">
+                                                    <div className="comentarioIndividual" key={comentario.id}>
                                                         <img id="fotoUsuario" src={usuarios.foto} />
                                                         <div className="dados">
                                                             <h2>{usuarios.username}</h2>

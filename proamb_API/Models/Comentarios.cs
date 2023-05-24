@@ -6,10 +6,10 @@ namespace proamb_API.Models
         public string? Conteudo { get; set; }
 
         //foreign keys
-        public int UsuariosId { get; set; }
-        public int PostsId { get; set; }
+        public int IdUsuario { get; set; }
+        public int IdPost { get; set; }
 
-        public Usuarios Usuario { get; set; }
-        public Posts Post { get; set; }
+        /*public Usuarios Usuario { get; set; }
+        public Posts Post { get; set; }*/
     }
 }

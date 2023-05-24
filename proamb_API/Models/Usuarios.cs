@@ -11,7 +11,7 @@ namespace proamb_API.Models
         public string? Biografia { get; set ; }
         public string? Cep { get; set; }
 
-        public ICollection<Posts> Posts { get; set; }
-        public ICollection<Comentarios> Comentarios { get; set; }
+        //public ICollection<Posts> Posts { get; set; }
+        //public ICollection<Comentarios> Comentarios { get; set; }
     }
 }

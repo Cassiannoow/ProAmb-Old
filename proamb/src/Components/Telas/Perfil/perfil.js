@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { Component, useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { meuContext } from "../../../Contexto";
 import './perfil.css'
 
 const urlAPI = 'http://localhost:5006/api/usuarios/'
@@ -54,7 +53,7 @@ export default function Perfil() {
                                     if(amigo.id != usuario.id)
                                     {
                                         return(
-                                            <div className="perfil-amigo">
+                                            <div className="perfil-amigo" key={amigo.id}>
                                                 <Link onClick={redirect}>
                                                     <img src={amigo.foto} alt='foto do amigo' className='foto_do_amigo' />
                                                     <h3 className="nomeAmigo">{amigo.username}</h3>

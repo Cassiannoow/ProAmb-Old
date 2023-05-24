@@ -7,10 +7,10 @@ namespace proamb_API.Models
         public string? Conteudo { get; set; }
 
         //foreign key para usuario
-        public int UsuariosId { get; set; }
-        public Usuarios Usuario { get; set; }
+        public int IdUsuario { get; set; }
+        /*public Usuarios Usuario { get; set; }
 
         //foreign key para comentarios
-        public ICollection<Comentarios> Comentarios { get; set; }
+        public ICollection<Comentarios> Comentarios { get; set; }*/
     }
 }

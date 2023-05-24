@@ -3,11 +3,9 @@ import Logo from '../../assets/img/Logo/ProAmb_logo-removebg-preview.png'
 import BarraDePesquisa from '../BarraDePesquisa/BarraDePesquisa';
 import React, { useContext, useEffect } from "react";
 import { Link } from 'react-router-dom';
-import { meuContext } from '../../Contexto';
 
 export default function Header()
 {
-    const [user,setUser] = useContext(meuContext)
 
     /*useEffect(() => {
         function exibirPerfil() {
