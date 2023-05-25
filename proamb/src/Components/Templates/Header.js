@@ -3,43 +3,25 @@ import Logo from '../../assets/img/Logo/ProAmb_logo-removebg-preview.png'
 import BarraDePesquisa from '../BarraDePesquisa/BarraDePesquisa';
 import React, { useContext, useEffect } from "react";
 import { Link } from 'react-router-dom';
+import AuthService from '../../services/AuthService';
+import { useState } from 'react';
 
 export default function Header()
 {
 
-    /*useEffect(() => {
-        function exibirPerfil() {
-            let header = document.getElementById('navegacao')
-
-            if(user != null)
-            {
-                //header.removeChild(header.lastChild)
-                
-                let sectionIconPerfil = document.createElement('section')
-                sectionIconPerfil.className = 'item'
-
-                let lbUsername = document.createElement('span')
-                lbUsername.innerHTML = user.username
-                lbUsername.className = 'username'
-
-                let imgPerfil = document.createElement('img')
-                imgPerfil.src = user.foto
-                imgPerfil.className = 'iconePerfil'
-
-                header.replaceChild(sectionIconPerfil, header.lastChild)
-                sectionIconPerfil.appendChild(lbUsername)
-                sectionIconPerfil.appendChild(imgPerfil)
-            }
-            else
-            {
-                let divEntrar = document.createElement('div')
-
-                header.replaceChild()//fazer codigo pra quando usuario deslogar
-            }
+    useEffect(() => {
+        const user = AuthService.getCurrentUser();
+        if (user) {
+            setCurrentUser(user);
         }
+    }, []);
 
-        exibirPerfil()
-    }, [user])*/
+    let deslogar = () => {
+        AuthService.logout()
+        setCurrentUser(undefined)
+    }
+
+    const [currentUser, setCurrentUser] = useState(undefined)
 
     return (
         <div className='header'>
@@ -74,11 +56,32 @@ export default function Header()
                 </h3>
 
                 <section>
-                    <Link to='/entrar'>
-                        <div className='entrar'>
-                            <span id="entrar">Entrar</span>
-                        </div>
-                    </Link>
+                    {
+                    currentUser ? (
+                        <Link to='/meu-perfil'>
+                            <div className='entrar'>
+                                <span id='entrar'>Perfil</span>
+                            </div>
+                        </Link>
+                        )
+                        : (
+                        <Link to='/entrar'>
+                            <div className='entrar'>
+                                <span id="entrar">Entrar</span>
+                            </div>
+                        </Link> )
+                    }
+                </section>
+                <section>
+                    {
+                        currentUser ? (
+                        <Link to='/entrar'>
+                            <div className='entrar' onClick={deslogar}>
+                                <span id='entrar'>Sair</span>
+                            </div>
+                        </Link> ) :
+                        <></>
+                    }
                 </section>
             </header>
         </div>

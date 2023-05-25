@@ -457,3 +457,4 @@ C:\Users\u22143\Desktop\ProAmb\proamb_API\obj\Debug\net7.0\proamb_API.pdb
 C:\Users\u22143\Desktop\ProAmb\proamb_API\obj\Debug\net7.0\proamb_API.genruntimeconfig.cache
 C:\Users\u22143\Desktop\ProAmb\proamb_API\obj\Debug\net7.0\ref\proamb_API.dll
 C:\Users\Hugo\Desktop\ProAmb\proamb_API\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\u22136\Desktop\ProAmb\proamb_API\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

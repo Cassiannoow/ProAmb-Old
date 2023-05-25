@@ -46,15 +46,15 @@ export default function Login() {
             <section className="login">
                 <form>
                     <div className="cabecalho">
-                        <Link to="/login"><h3 id='btnLogin' className="opcao selecionado">LOGIN</h3></Link>
-                        <h3 id='btnCadastro' className="opcao deselecionado">CADASTRO</h3>
+                        <h3 id='btnLogin' className="opcao selecionado">LOGIN</h3>
+                        <Link to="/cadastro"><h3 id='btnCadastro' className="opcao deselecionado">CADASTRO</h3></Link>
                     </div>
 
                     <div className="campos">
                         <div id="campos">
                             <input id='username' type="text" value={username} placeholder="Nome de usuário" className="campo" onChange={({target}) => {setUsername(target.value); setMessage('')}} />
                             <input id='senha' type="password" value={senha} placeholder="Senha" className="campo" onChange={({target}) => {setSenha(target.value); setMessage('')}} />
-                            <span id='dadosIncorretos'>{message}</span>
+                            <span id='dadosIncorretos'>{message ? 'Username ou senha incorretos' : ''}</span>
                         </div>
                         <br/>
                         <span id='esqueciASenha'><u>Esqueci a senha</u></span>

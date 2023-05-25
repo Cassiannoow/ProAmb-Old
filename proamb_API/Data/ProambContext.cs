@@ -42,5 +42,6 @@ namespace proamb_API.Data
         public DbSet<Usuarios> Usuarios {get; set;}
         public DbSet<Posts> Posts { get; set; }
         public DbSet<Comentarios> Comentarios { get; set; }
+        public DbSet<Amigos> Amigos {get; set;}
     }
 }

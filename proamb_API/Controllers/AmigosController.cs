@@ -6,61 +6,58 @@ namespace proamb_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PostsController: ControllerBase
+    public class AmigosController : ControllerBase
     {
         private ProambContext _context;
-        public PostsController(ProambContext context)
+        public AmigosController(ProambContext context)
         {
             _context = context;
         }
 
         [HttpGet]
-        public ActionResult<List<Posts>> GetAll()
+        public ActionResult<List<Amigos>> GetAll()
         {
-            return _context.Posts.ToList();
+            return _context.Amigos.ToList();
         }
 
-        [HttpGet("{idPost}")]
-        public async Task<ActionResult<Posts>> GetPost(int idPost)
+        [HttpGet("{idUsuario}/{idAmigo}")]
+        public async Task<ActionResult<Amigos>> GetAmigo(int idUsuario, int idAmigo)
         {
-            var post = await _context.Posts.FindAsync(idPost);
+            var amigo = await _context.Amigos.FindAsync(idUsuario, idAmigo);
 
-            return post;
+            return amigo;
         }
-
 
         [HttpPost]
-        public async Task<ActionResult> post(Posts model)
+        public async Task<ActionResult> post(Amigos model)
         {
             try {
-                _context.Posts.Add(model);
+                _context.Amigos.Add(model);
                 if( await _context.SaveChangesAsync() == 1)
                 {
-                    return Created($"/api/posts/{model.Id}", model);
+                    return Created($"/api/posts/{model.IdUsuario}/{model.IdAmigo}", model);
                 }
             }
             catch
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Falha no acesso ao banco de dados.");
             }
-
             return BadRequest();
         }
 
-        [HttpPut("{idPost}")]
-        public async Task<ActionResult> put(int idPost, Posts postAlt)
+        /*[HttpPut("{idUsuario}/{idAmigo}")]
+        public async Task<ActionResult> put(int idUsuario, int idAmigo, Amigos amigoAlt)
         {
             try {
-                var result = await _context.Posts.FindAsync(idPost);
-                if(idPost != result.Id)
+                var result = await _context.Comentarios.FindAsync(idComentario);
+                if(idComentario != result.Id)
                 {
                     return BadRequest();
                 }
 
-                result.Imagem = postAlt.Imagem;
-                result.Conteudo = postAlt.Conteudo;
+                result.Conteudo = comentarioAlt.Conteudo;
                 await _context.SaveChangesAsync();
-                return Created($"/api/usuario/{postAlt.Id}", postAlt);
+                return Created($"/api/usuario/{comentarioAlt.Id}", comentarioAlt);
             }
             catch
             {
@@ -68,17 +65,17 @@ namespace proamb_API.Controllers
             }
         }
 
-        [HttpDelete("{idPost}")]
-        public async Task<ActionResult> delete(int idPost)
+        [HttpDelete("{idComentario}")]
+        public async Task<ActionResult> delete(int idComentario)
         {
             try {
-                var post = await _context.Posts.FindAsync(idPost);
-                if(post == null)
+                var comentario = await _context.Comentarios.FindAsync(idComentario);
+                if(comentario == null)
                 {
                     return NotFound();
                 }
                 
-                _context.Remove(post);
+                _context.Remove(comentario);
                 await _context.SaveChangesAsync();
                 return NoContent();
             }
@@ -86,6 +83,6 @@ namespace proamb_API.Controllers
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Falha no acesso ao banco de dados.");
             }
-        }
+        }*/
     }
 }

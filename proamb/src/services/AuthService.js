@@ -18,25 +18,26 @@ const login = (username, senha) => {
 
 const logout = () => {
     localStorage.removeItem("user");
+    console.log(JSON.parse(localStorage.getItem("user")))
 }
 
 const getCurrentUser = () => {
+    console.log(JSON.parse(localStorage.getItem("user")))
     return JSON.parse(localStorage.getItem("user"));
 };
 
-const cadastrar = (nome, username, senha, email, cep) => { //tem q tá vendo
+const cadastrar = (nome, username, senha, email, cep, foto) => { //tem q tá vendo
     return axios.post(API_URL + "usuarios", {
         nome,
         username,
         senha,
         email,
-        cep
+        cep,
+        foto
     })
     .then((response) => { //tem q ver isso aqui
         console.log("response: " + JSON.stringify(response.data.token))
-        if (response.data.token) {
-            localStorage.setItem("user", JSON.stringify(response.data));
-        }
+        login(response.data.username, response.data.senha)
         return response.data;
     });
 }
