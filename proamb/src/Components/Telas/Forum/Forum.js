@@ -57,25 +57,31 @@ export default class Forum extends Component {
     return (
         <article id="telaForum">
             { this.state.user ?
-                <button className="criar-button" onClick={e => this.handleClickbtn(e)}>Criar Post</button> :
+                <div className="divBtn">
+                    <button className="criar-button" onClick={e => this.handleClickbtn(e)}>CREATE POST</button>
+                </div>
+                :
                 <></>
             }
                 {
                     this.state.criandoPost ?
                     <form id="criandoPost">
-                        <p>Link da imagem:</p>
+                        <p className="text">Link da imagem:</p>
                         <input type="url" className="link-imagem" placeholder="URL da imagem" id="imagem" />
                         <br />
-                        <textarea className="conteudo-novo-post" placeholder="Digite aqui o conteúdo da postagem" id="conteudo" />
-                        <input type="button" value="Criar" className="confirmar-criacao-post" onClick={e => this.inserirPost()} />
-                        <input type="button" value="Cancelar" className="confirmar-criacao-post" onClick={e => this.mudarEstado(e)} />
+                        <p className="text">Conteudo do Post:</p>
+                        <textarea  className="conteudo-novo-post" placeholder="Digite aqui o conteúdo da postagem" id="conteudo" />
+                        <div id="botoesCreateAndDelete">
+                            <input type="button" value="Criar" className="confirmar-criacao-post" onClick={e => this.inserirPost()} />
+                            <input type="button" value="Cancelar" className="confirmar-criacao-post" onClick={e => this.mudarEstado(e)} />
+                        </div>
                     </form> 
                     :
                     <div id="div-posts">
-                    { this.state.posts.map((post) => 
-                        <Post key={post.id} idPost={post.id} imagem={post.imagem} conteudo={post.conteudo} />
-                    )}
-            </div>}
+                        { this.state.posts.map((post) => 
+                            <Post key={post.id} idPost={post.id} imagem={post.imagem} conteudo={post.conteudo} />
+                        )}
+                    </div>}
         </article>
     )}
 }

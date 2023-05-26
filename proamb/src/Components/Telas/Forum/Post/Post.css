@@ -1,129 +1,27 @@
 .post {
-    display: grid;
-    grid-template-areas:
-    "artigo comentarios";
-    height: 90vh;
+    display: flex;
     background-color: rgb(84, 131, 78);
-    margin-bottom: 100px;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin: 25px;
     border-radius: 50px;
 }
 
-#telaForum {
-    display: grid;
-    grid-template-areas:
-    "artigo comentarios";
-    display: flex;
-    flex-direction: column;
-}
-
-.artigo {
-    grid-area: "artigo";
-    margin-top: 60px;
-    margin-left: 90px;
+.temaArtigo {
+    margin: 60px;
     overflow: hidden;
     color: white;
     font-size: 26px;
-    width: 40vw;
-}
-
-.temaArtigo {
-    width: 550px;
-    height: 450px;
 }
 
 #imagemArtigo {
-    width: 550px;
-    height: 330px;
+    width: 640px;
+    height: 360px;
     border-radius: 20px;
 }
 
 .comenteAqui {
-    margin-top: 30px;
+    margin: 30px;
 }
 
-.comentarios {
-    margin-top: 60px;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    overflow-x: hidden;
-    background-color: #DEF2D5;
-    width: 42.5vw;
-    border-radius: 20px;
-}
-
-.comentarioIndividual {
-    margin-top: -50px;
-    padding: 30px;
-    display: flex;
-    flex-direction: row;
-}
-
-.dados {
-    width: 30vw;
-}
-
-.dados h2 {
-    margin-top: 0;
-    margin-left: 20px;
-    background-color: #D9D9D9;
-    color: #717171;
-    padding: 5px;
-    padding-left: 10px;
-}
-
-.dados p {
-    margin-top: -35px;
-    overflow-x: auto;
-}
-
-#cardComentarios {
-    margin-top: 50px;
-    margin-right: 60px;
-    color: black;
-    border-radius: 10px;
-}
-
-.imagem {
-    background-color: white;
-    margin-top: 20px;
-    margin-left: 30px;
-    margin-bottom: 20px;
-    width: 150px;
-    height: 150px;
-}
-
-.informacoes {
-    background-color: transparent;
-    margin-top: 20px;
-    margin-left: 30px;
-    margin-bottom: 20px;
-    width: 520px;
-    height: 150px;
-}
-
-.imagem, .informacoes {
-    display: inline-block;
-}
-
-.informacoes .pessoais {
-    background-color: #D9D9D9;
-    margin-bottom: 120px;
-    width: 520px;
-    height: 50px;
-}
-
-.mensagem {
-    color: #000000;
-    padding-left: 20px;
-    padding-top: 20px;
-}
-
-#fotoUsuario {
-    width: 150px;
-    height: 150px;
-    border-radius: 5px;
+.conteudo{
+    width: 600px;
 }

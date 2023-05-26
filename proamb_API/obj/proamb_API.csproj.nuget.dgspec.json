@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\u22136\\Desktop\\ProAmb\\proamb_API\\proamb_API.csproj": {}
+    "D:\\Documentos\\GitHub\\ProAmb\\proamb_API\\proamb_API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\u22136\\Desktop\\ProAmb\\proamb_API\\proamb_API.csproj": {
+    "D:\\Documentos\\GitHub\\ProAmb\\proamb_API\\proamb_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\u22136\\Desktop\\ProAmb\\proamb_API\\proamb_API.csproj",
+        "projectUniqueName": "D:\\Documentos\\GitHub\\ProAmb\\proamb_API\\proamb_API.csproj",
         "projectName": "proamb_API",
-        "projectPath": "C:\\Users\\u22136\\Desktop\\ProAmb\\proamb_API\\proamb_API.csproj",
-        "packagesPath": "C:\\Users\\u22136\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\u22136\\Desktop\\ProAmb\\proamb_API\\obj\\",
+        "projectPath": "D:\\Documentos\\GitHub\\ProAmb\\proamb_API\\proamb_API.csproj",
+        "packagesPath": "C:\\Users\\cassi\\.nuget\\packages\\",
+        "outputPath": "D:\\Documentos\\GitHub\\ProAmb\\proamb_API\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\u22136\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\cassi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -91,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.105\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
