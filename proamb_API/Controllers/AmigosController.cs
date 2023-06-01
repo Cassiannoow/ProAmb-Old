@@ -1,3 +1,4 @@
+/*
 using Microsoft.AspNetCore.Mvc;
 using proamb_API.Data;
 using proamb_API.Models;
@@ -83,6 +84,7 @@ namespace proamb_API.Controllers
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Falha no acesso ao banco de dados.");
             }
-        }*/
+        }
     }
 }
+*/

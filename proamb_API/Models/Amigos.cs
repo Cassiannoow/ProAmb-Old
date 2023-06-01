@@ -1,3 +1,4 @@
+/*
 namespace proamb_API.Models
 {
     public class Amigos
@@ -8,3 +9,4 @@ namespace proamb_API.Models
         public int IdAmigo { get; set; }
     }
 }
+*/

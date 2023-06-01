@@ -5,7 +5,7 @@
 }
 
 
-.criar-button, .confirmar-criacao-post{
+.confirmar-criacao-post{
     width: 520px;
     margin: 15px;
     background-color: rgb(84, 131, 78);
@@ -16,9 +16,24 @@
     cursor: pointer;
 }
 
+.criar-button {
+    background-color: #def2d5;
+    border: none;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    border-radius: 20px;
+    height: 70px;
+    width: 300px;
+}
+
+.criar-button:hover {
+    background-color: rgb(84, 131, 78);
+    cursor: pointer;
+}
+
 .divBtn{
     display: flex;
     justify-content: center;
+    margin-top: 140px;
 }
 
 #criandoPost{
@@ -26,6 +41,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
+}
+
+.frmCriandoPost {
+    background-color: #def2d5;
+    padding: 20px;
+    border-radius: 20px;
 }
 
 #botoesCreateAndDelete{
@@ -37,15 +59,18 @@
     resize: none;
     width: 1200px;
     height: 200px;
-    font-size: 30px;
+    font-size: 20px;
+    
 }
 
 .link-imagem{
     width: 1200px;
-    font-size: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
 }
 
 .text{
-    font-size: 30px;
+    font-size: 20px;
     text-align: left;
 }

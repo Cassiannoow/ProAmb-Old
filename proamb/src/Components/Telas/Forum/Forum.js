@@ -58,7 +58,7 @@ export default class Forum extends Component {
         <article id="telaForum">
             { this.state.user ?
                 <div className="divBtn">
-                    <button className="criar-button" onClick={e => this.handleClickbtn(e)}>CREATE POST</button>
+                    <button className="criar-button" onClick={e => this.handleClickbtn(e)}><b>Criar um novo post no Fórum</b></button>
                 </div>
                 :
                 <></>
@@ -66,14 +66,16 @@ export default class Forum extends Component {
                 {
                     this.state.criandoPost ?
                     <form id="criandoPost">
-                        <p className="text">Link da imagem:</p>
-                        <input type="url" className="link-imagem" placeholder="URL da imagem" id="imagem" />
-                        <br />
-                        <p className="text">Conteudo do Post:</p>
-                        <textarea  className="conteudo-novo-post" placeholder="Digite aqui o conteúdo da postagem" id="conteudo" />
-                        <div id="botoesCreateAndDelete">
+                        <div className="frmCriandoPost">
+                            <p className="text">Link da imagem:</p>
+                            <input type="url" className="link-imagem" placeholder="URL da imagem" id="imagem" />
+                            <br/>
+                            <p className="text">Conteúdo do Post:</p>
+                            <textarea  className="conteudo-novo-post" placeholder="Digite aqui o conteúdo da postagem" id="conteudo" />
+                            <div id="botoesCreateAndDelete">
                             <input type="button" value="Criar" className="confirmar-criacao-post" onClick={e => this.inserirPost()} />
                             <input type="button" value="Cancelar" className="confirmar-criacao-post" onClick={e => this.mudarEstado(e)} />
+                        </div>
                         </div>
                     </form> 
                     :
