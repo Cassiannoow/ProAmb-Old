@@ -46,11 +46,8 @@ export default class Forum extends Component {
             conteudo,
             idUsuario
         }).then((response) => {
-            console.log('response:' + JSON.stringify(response.data.token))
-            return response.data
+            window.location.reload()
         })
-        
-        window.location.reload()
     }
 
     render(){

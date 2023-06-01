@@ -68,9 +68,9 @@
     display: flex;
     justify-content:space-around;
     padding: 15px;
-    padding-left: 150px;
+    padding-left: 400px;
     overflow: auto;
-    width: 800px;
+    width: 300px;
 }
 
 p.txtFora {
@@ -122,4 +122,15 @@ h3.nomeAmigo{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.confirmar-criacao-post{
+    width: 200px;
+    margin: 15px;
+    background-color: rgb(84, 131, 78);
+    font-size: 30px;
+    border: solid 2px #D9D9D9;
+    border-radius: 20px;
+    color: #D9D9D9;
+    cursor: pointer;
 }

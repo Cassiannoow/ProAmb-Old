@@ -1,7 +1,7 @@
 import './Header.css';
 import Logo from '../../assets/img/Logo/ProAmb_logo-removebg-preview.png'
 import BarraDePesquisa from '../BarraDePesquisa/BarraDePesquisa';
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from 'react-router-dom';
 import AuthService from '../../services/AuthService';
 import { useState } from 'react';

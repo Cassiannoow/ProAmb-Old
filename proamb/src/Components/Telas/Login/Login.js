@@ -27,7 +27,7 @@ export default function Login() {
             AuthService.login(username, Conversor(senha)).then(
                 () => {
                     console.log("localStorage: " + localStorage.getItem("user"));
-                    navigate("/perfil/" + username);
+                    navigate("/meu-perfil");
                     window.location.reload();
                 },
                 (error) => {

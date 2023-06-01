@@ -1,21 +1,19 @@
 import axios from "axios";
-import React, { Component, useContext, useEffect, useState } from "react";
+import {React, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import './perfil.css'
+import './perfil.css';
 
 const urlAPI = 'http://localhost:5006/api/usuarios/'
 const urlAPIposts = 'http://localhost:5006/api/posts/'
 
 export default function Perfil() {
 
-    //const [user, setUser] = useContext(meuContext
     const [usuario, setUsuario] = useState({id:0,nome:"",email:"",senha:"",username:"",foto:"",biografia:"",cep:""})
     const [amigos, setAmigos] = useState({amigo:{id:0,nome:"",email:"",senha:"",username:"",foto:"",biografia:"",cep:""}, lista: []})
     const [posts, setPosts] = useState({post:{id:0, idUsuario:0, imagem:"", conteudo:""}, listaPosts: []})
     const info = useParams()
 
     useEffect(() => {
-        console.log(info)
 
         axios(urlAPI + info.username).then(resp => {
             setUsuario(resp.data)
@@ -29,9 +27,7 @@ export default function Perfil() {
             setPosts({listaPosts: resp.data})
         })
 
-        console.log(posts)
-
-    }, [])
+    }, [info])
     
     return (
         <div>
@@ -53,10 +49,10 @@ export default function Perfil() {
                             {
                                 amigos.lista.map((amigo) => {
                                     function redirect(){
-                                        window.location.replace('/perfil/'+`${amigo.username}`)
-                                        console.log('/perfil/'+`${amigo.username}`)
+                                        window.location.replace(`/perfil/${amigo.username}`)
+                                        console.log(`/perfil/${amigo.username}`)
                                     }
-                                    if(amigo.id != usuario.id)
+                                    if(amigo.id !== usuario.id)
                                     {
                                         return(
                                             <div className="perfil-amigo" key={amigo.id}>
@@ -67,7 +63,7 @@ export default function Perfil() {
                                             </div>
                                         )
                                     }
-                                    
+                                    return(<></>)
                                 })
                             }
                         </div>
@@ -87,15 +83,12 @@ export default function Perfil() {
             <div className="areaPosts">
                     {
                         posts.listaPosts.map((post) => {
-                            function redirect(){
-                                window.location.replace('/forum/'+`${post.id}`)
-                            }
-                            if(post.idUsuario == usuario.id)
+                            if(post.idUsuario === usuario.id)
                             {
                                 return(
                                     <div className="post">
 
-                                    <Link to={redirect}>
+                                    <Link to="">
                                         <div className="temaArtigo">
                                             <img id="imagemArtigo" src={post.imagem}/*"https://surfguru.space/2018/09/180903100345000000.jpg"*/ alt="tartaruga" />
                                             <br/>
@@ -111,7 +104,7 @@ export default function Perfil() {
                                     </div>
                                 )
                             }
-                            
+                            return(<></>)
                         })
                     }
                 </div>
