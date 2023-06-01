@@ -1,6 +1,6 @@
 .perfil {
     background-color: #6CBA7F;
-    width: 70vw;
+    width: 75vw;
     text-align: center;
     margin: auto;
     margin-top: 150px;
@@ -10,7 +10,6 @@
     grid-template-areas: 
     "info amigos"
     "info descricao";
-    overflow: hidden;
 }
 
 #foto {
@@ -44,6 +43,7 @@
     margin: 15px;
     background-color: #70AB7E;
     border-radius: 25px;
+    overflow-x: auto;
 }
 
 .informacoes_pessoais{
@@ -68,6 +68,9 @@
     display: flex;
     justify-content:space-around;
     padding: 15px;
+    padding-left: 150px;
+    overflow: auto;
+    width: 800px;
 }
 
 p.txtFora {
@@ -89,4 +92,34 @@ h3.nomeAmigo{
 
 .biografia p{
     padding: 15px;
+}
+
+.post {
+    display: flex;
+    background-color: rgb(84, 131, 78);
+    margin: 25px;
+    border-radius: 50px;
+}
+
+.temaArtigo {
+    margin: 60px;
+    overflow: hidden;
+    color: white;
+    font-size: 26px;
+}
+
+#imagemArtigo {
+    width: 640px;
+    height: 360px;
+    border-radius: 20px;
+}
+
+.conteudo{
+    width: 600px;
+}
+
+.areaPosts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }

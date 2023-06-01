@@ -19,10 +19,14 @@
 .criar-button {
     background-color: #def2d5;
     border: none;
+    color: #D9D9D9;
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
-    border-radius: 20px;
-    height: 70px;
-    width: 300px;
+    border-radius: 100px;
+    font-size: 36px;
+    position: fixed;
+    width: 60px;
+    top: 90%;
+    left: 95%;
 }
 
 .criar-button:hover {

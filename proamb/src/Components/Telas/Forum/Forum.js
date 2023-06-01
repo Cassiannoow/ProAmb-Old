@@ -58,7 +58,7 @@ export default class Forum extends Component {
         <article id="telaForum">
             { this.state.user ?
                 <div className="divBtn">
-                    <button className="criar-button" onClick={e => this.handleClickbtn(e)}><b>Criar um novo post no Fórum</b></button>
+                    <button className="criar-button" onClick={e => this.handleClickbtn(e)}><b>+</b></button>
                 </div>
                 :
                 <></>
