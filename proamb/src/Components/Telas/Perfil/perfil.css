@@ -134,3 +134,13 @@ h3.nomeAmigo{
     color: #D9D9D9;
     cursor: pointer;
 }
+
+#icones_de_usuario::-webkit-scrollbar{
+    border-radius: 25px;
+    height: 10px;
+}
+
+#icones_de_usuario::-webkit-scrollbar-thumb{
+    background-color: #FFFFFF;
+    border-radius: 25px;
+}

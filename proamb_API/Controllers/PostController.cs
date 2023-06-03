@@ -73,6 +73,7 @@ namespace proamb_API.Controllers
         {
             try {
                 var post = await _context.Posts.FindAsync(idPost);
+
                 if(post == null)
                 {
                     return NotFound();

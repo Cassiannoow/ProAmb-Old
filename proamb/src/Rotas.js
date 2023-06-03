@@ -9,6 +9,7 @@ import Descartar from "./Components/Telas/Descartar/Descartar";
 import Perfil from "./Components/Telas/Perfil/perfil";
 import Cadastro from "./Components/Telas/Login/Cadastro";
 import MeuPerfil from './Components/Telas/Perfil/MeuPerfil'
+import PostsCompletos from "./Components/Telas/Forum/Post/PostsCompletos"
  
 export default function Rotas() {
 
@@ -44,6 +45,10 @@ export default function Rotas() {
 
                 <Route path='/meu-perfil' element={
                     <MeuPerfil />
+                } />
+
+                <Route path='/post/:id' element={
+                    <PostsCompletos />
                 } />
             </Routes>
     )

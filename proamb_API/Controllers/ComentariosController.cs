@@ -28,6 +28,12 @@ namespace proamb_API.Controllers
             return comentario;
         }
 
+        [HttpGet("bypost/{idPost}")]
+        public ActionResult<List<Comentarios>> GetComentarioByIdPost(int idPost)
+        {
+            return _context.Comentarios.Where(u =>  u.IdPost == idPost).ToList();
+        }
+
         [HttpPost]
         public async Task<ActionResult> post(Comentarios model)
         {

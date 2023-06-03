@@ -1,19 +1,30 @@
-#divdivComentario {
+#divComentario {
     margin-top: 35px;
-    background: #FFFAFA;
-    width:  233px;
-    height: 31px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #txtComentario {
-    float:left;
     padding-left: 10px;
     font-size:18px;
     border:none;
     height: 40px;
-    width: 540px;
+    width: 75%;
 }
 
 input:focus{
     outline: 0;
+}
+
+.confirmar-criacao-comentario{
+    width: 200px;
+    margin: 15px;
+    background-color: rgb(84, 131, 78);
+    font-size: 30px;
+    border: solid 2px #D9D9D9;
+    border-radius: 20px;
+    color: #D9D9D9;
+    cursor: pointer;
 }
