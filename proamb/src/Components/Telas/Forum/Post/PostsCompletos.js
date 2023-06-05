@@ -12,8 +12,10 @@ function apagarComentario(idComentario){
     })
 }
 
+
+
 export default function PostsCompletos(){
-    const [usuario, setUsuario] = useState({user: {id:0,username:"",foto:""}, lista: []})
+    const [usuario, setUsuario] = useState({user: {id:0,nome:"",email:"",senha:"",username:"",foto:"",biografia:"",cep:""}, lista: []})
     const [comentarios, setComentarios] = useState({comentario: {id: 0, idPost: 0, idUsuario: 0, conteudo:''}, listaComentarios: []})
     const [posts, setPosts] = useState({id:0, idUsuario:0, imagem:"", conteudo:""})
     const info = useParams()
@@ -26,18 +28,31 @@ export default function PostsCompletos(){
         axios(urlAPI+ 'comentarios/bypost/' + info.id).then(resp => {
             setComentarios({listaComentarios: resp.data})
         })
-        axios(urlAPI + 'Usuarios').then(resp => {
+        axios(urlAPI + 'usuarios').then(resp => {
             setUsuario({ lista: resp.data })
+            console.log(usuario)
         })
     }, [])
 
+    function verificaSeTalogado(id)
+    {
+        if(userAtual != null)
+        {
+            if(userAtual.user.id == id)
+            {
+                return true
+            }
+        }
+        else{return false;}
+    }
+
     return (
         <div>
-            <div className="posts">
-                <div className="Artigo">
-                    <img id="imagemArtigo" src={posts.imagem}/*"https://surfguru.space/2018/09/180903100345000000.jpg"*/ alt="tartaruga" />
+            <div className="postsCompletos">
+                <div className="ArtigoPostCompleto">
+                    <img id="imagemArtigoPostCompleto" src={posts.imagem}/*"https://surfguru.space/2018/09/180903100345000000.jpg"*/ alt="tartaruga" />
                     <br/>
-                    <div className="conteudo">
+                    <div className="conteudoPostCompleto">
                         <span><b>{posts.conteudo}</b></span>
                     </div>
                 </div>
@@ -60,7 +75,7 @@ export default function PostsCompletos(){
                                                     <div className="dados">
                                                         <div className="nome">
                                                         <h2>{user.username}
-                                                        {userAtual.user.id == comentario.idUsuario ? <button onClick={e => apagarComentario(comentario.id)}>Delete</button>: <></>}</h2> 
+                                                        { verificaSeTalogado(comentario.idUsuario) ? <button onClick={e => apagarComentario(comentario.id)}>Delete</button>: <></>}</h2> 
                                                         </div>
                                                         <p className="mensagem">{comentario.conteudo}</p>
                                                     </div>

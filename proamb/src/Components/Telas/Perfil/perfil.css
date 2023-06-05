@@ -1,6 +1,6 @@
 .perfil {
     background-color: #6CBA7F;
-    width: 75vw;
+    max-width: 75vw;
     text-align: center;
     margin: auto;
     margin-top: 150px;
@@ -44,6 +44,7 @@
     background-color: #70AB7E;
     border-radius: 25px;
     overflow-x: auto;
+    width: 500px;
 }
 
 .informacoes_pessoais{
@@ -70,7 +71,6 @@
     padding: 15px;
     padding-left: 400px;
     overflow: auto;
-    width: 300px;
 }
 
 p.txtFora {
@@ -94,7 +94,7 @@ h3.nomeAmigo{
     padding: 15px;
 }
 
-.post {
+.postPerfil{
     display: flex;
     background-color: rgb(84, 131, 78);
     margin: 25px;
@@ -116,6 +116,8 @@ h3.nomeAmigo{
 
 .conteudo{
     width: 600px;
+    height: 200px;
+    overflow: hidden;
 }
 
 .areaPosts{
@@ -124,9 +126,15 @@ h3.nomeAmigo{
     justify-content: center;
 }
 
-.confirmar-criacao-post{
+.botoesPosts{
+    display: flex;
+    justify-content: right;
+    margin: 10%;
+}
+
+.btn-delete-editar {
     width: 200px;
-    margin: 15px;
+    margin: 5px;
     background-color: rgb(84, 131, 78);
     font-size: 30px;
     border: solid 2px #D9D9D9;
@@ -143,4 +151,12 @@ h3.nomeAmigo{
 #icones_de_usuario::-webkit-scrollbar-thumb{
     background-color: #FFFFFF;
     border-radius: 25px;
+}
+
+.iconEditar{
+    width: 80px;
+    position: absolute;
+    top: 420px;
+    left: 480px;
+    cursor: pointer;
 }

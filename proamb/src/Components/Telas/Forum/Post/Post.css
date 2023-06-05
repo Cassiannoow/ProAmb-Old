@@ -1,4 +1,4 @@
-post {
+.post {
     display: flex;
     background-color: rgb(84, 131, 78);
     margin: 25px;
@@ -18,10 +18,8 @@ post {
     border-radius: 20px;
 }
 
-.comenteAqui {
-    margin: 30px;
-}
-
-.conteudo{
-    width: 600px;
+.conteudoPost{
+    height: 200px;
+    width: 650px;
+    overflow: hidden;
 }

@@ -1,7 +1,7 @@
 import axios from "axios";
 import {React, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import './perfil.css';
+import './Perfil.css';
 
 const urlAPI = 'http://localhost:5006/api/usuarios/'
 const urlAPIposts = 'http://localhost:5006/api/posts/'
@@ -86,7 +86,7 @@ export default function Perfil() {
                             if(post.idUsuario === usuario.id)
                             {
                                 return(
-                                    <div className="post">
+                                    <div className="postPerfil">
 
                                     <Link to="">
                                         <div className="temaArtigo">
