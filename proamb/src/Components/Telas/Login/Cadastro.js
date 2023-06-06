@@ -4,6 +4,7 @@ import GoogleIcon from '../../../assets/img/icons/google_icon.png';
 import Email from '../../../assets/img/icons/email.png';
 import Conversor from '../../ConversorMD5/Converter';
 import AuthService from "../../../services/AuthService";
+import './Login.css'
 
 export default function Cadastro() {
 
@@ -47,16 +48,16 @@ export default function Cadastro() {
             <section className="login">
                 <form>
                     <div className="cabecalho">
-                        <Link to='/entrar' ><h3 id='btnLogin' className="opcao deselecionado">LOGIN</h3></Link>
-                        <h3 id='btnCadastro' className="opcao selecionada">CADASTRO</h3>
+                        <Link to='/entrar' ><h3 id='btnLogin' className="deselecionado">LOGIN</h3></Link>
+                        <h3 id='btnCadastro' className="selecionado">CADASTRO</h3>
                     </div>
 
                     <div className="campos">
                         <div id="campos">
                             <input id='nome' type="text" value={nome} placeholder="Nome completo" className="campo" onChange={({target}) => {setNome(target.value); setMessage('')}} />
                             <input id='username' type="text" value={username} placeholder="Nome de usuário" className="campo" onChange={({target}) => {setUsername(target.value); setMessage('')}} />
-                            <input id='senha' type="password" value={senha} placeholder="Senha" className="campo" onChange={({target}) => {setSenha(target.value); setMessage('')}} />
                             <input id='email' type="email" value={email} placeholder="Email" className="campo" onChange={({target}) => {setEmail(target.value); setMessage('')}} />
+                            <input id='senha' type="password" value={senha} placeholder="Senha" className="campo" onChange={({target}) => {setSenha(target.value); setMessage('')}} />
                             <input id='cep' type="text" value={cep} placeholder="CEP" className="campo" onChange={({target}) => {setCep(target.value); setMessage('')}} />
                             <span id='dadosIncorretos'>{message}</span>
                         </div>

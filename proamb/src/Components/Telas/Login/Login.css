@@ -1,13 +1,11 @@
 #telaLogin {
-    display: grid;
-    grid-template-areas:
-    "login info";
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .login {
     grid-area: "login";
-    margin-top: 100px;
-    margin-left: 180px;
     overflow: hidden;
 }
 
@@ -107,7 +105,6 @@
 }
 
 .info {
-    grid-area: "info";
     overflow: hidden;
 }
 

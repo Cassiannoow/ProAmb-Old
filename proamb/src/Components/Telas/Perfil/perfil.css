@@ -99,6 +99,7 @@ h3.nomeAmigo{
     background-color: rgb(84, 131, 78);
     margin: 25px;
     border-radius: 50px;
+    flex-direction: column;
 }
 
 .temaArtigo {

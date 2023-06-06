@@ -46,8 +46,8 @@ export default function Login() {
             <section className="login">
                 <form>
                     <div className="cabecalho">
-                        <h3 id='btnLogin' className="opcao selecionado">LOGIN</h3>
-                        <Link to="/cadastro"><h3 id='btnCadastro' className="opcao deselecionado">CADASTRO</h3></Link>
+                        <h3 id='btnLogin' className="selecionado">LOGIN</h3>
+                        <Link to="/cadastro"><h3 id='btnCadastro' className="deselecionado">CADASTRO</h3></Link>
                     </div>
 
                     <div className="campos">

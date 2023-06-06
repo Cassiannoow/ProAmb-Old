@@ -11,6 +11,7 @@ import Cadastro from "./Components/Telas/Login/Cadastro";
 import MeuPerfil from './Components/Telas/Perfil/MeuPerfil';
 import MeuPerfilEditar from './Components/Telas/Perfil/MeuPerfilEditar';
 import PostsCompletos from "./Components/Telas/Forum/Post/PostsCompletos"
+import MapPage from "./Components/Telas/Descartar/MapPage";
  
 export default function Rotas() {
 
@@ -55,6 +56,10 @@ export default function Rotas() {
                 <Route path='/meu-perfil/editar' element={
                     <MeuPerfilEditar />
                 } />
+
+                <Route path='/map' element={
+                    <MapPage />
+                }/>
             </Routes>
     )
 }

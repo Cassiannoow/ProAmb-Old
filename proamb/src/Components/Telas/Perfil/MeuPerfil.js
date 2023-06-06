@@ -110,28 +110,31 @@ export default function MeuPerfil() {
                 <div className="areaPosts">
                     {
                         posts.listaPosts.map((post) => {
+                            function redirect(){
+                                window.location.replace(`/post/${post.id}`)
+                            }
                             if(post.idUsuario === usuario.user.id)
-                            {
+                            {           
                                 return(
                                     <div className="postPerfil">
-
-                                    <Link to="">
-                                        <div className="temaArtigo">
-                                            <img id="imagemArtigo" src={post.imagem}/*"https://surfguru.space/2018/09/180903100345000000.jpg"*/ alt="tartaruga" />
-                                            <br/>
-                                            <div  className="conteudo">
-                                                <span><b>{post.conteudo}</b></span>
-                                            </div>
-                                            <div className="comenteAqui">
-                                                <p>Leia mais..</p>
-                                            </div>
+                                        <div>
+                                            <Link onClick={redirect}>
+                                                <div className="temaArtigo">
+                                                    <img id="imagemArtigo" src={post.imagem}/*"https://surfguru.space/2018/09/180903100345000000.jpg"*/ alt="tartaruga" />
+                                                    <br/>
+                                                    <div  className="conteudo">
+                                                        <span><b>{post.conteudo}</b></span>
+                                                    </div>
+                                                    <div className="comenteAqui">
+                                                        <p>Leia mais..</p>
+                                                    </div>
+                                                </div>
+                                            </Link>
                                         </div>
                                         <div className="botoesPosts">
                                             <button className="btn-delete-editar" onClick={e => excluirPost(post.id)}>Excluir</button>
                                             <button className="btn-delete-editar">Editar</button>
                                         </div>
-                                        
-                                    </Link>
                                     </div>
                                 )
                             }

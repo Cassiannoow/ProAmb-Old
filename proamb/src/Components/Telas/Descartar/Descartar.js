@@ -1,7 +1,7 @@
 import React, { Component, useEffect } from "react";
 import BarraDeBuscarLugar from "../../BarraDeBuscarLugar/BarraDeBuscarLugar";
 import './Descartar.css';
-import axios from "axios";
+
 
 export default class Descartar extends Component {
     render() {
@@ -11,7 +11,6 @@ export default class Descartar extends Component {
                     <h2 id="tituloBuscar">Busque por endereço:</h2>
                     <BarraDeBuscarLugar />
                 </div>
-
                 <section className="buscar">
                     <button id="btnBuscarNoMapa"><b>Buscar no mapa</b></button>
                 </section>
