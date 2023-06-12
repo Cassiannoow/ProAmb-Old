@@ -73,6 +73,8 @@ li:hover {
 
 #descartar, #descartar a {
     background-color: #8C7C2B;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
 }
 
 #aprender, #aprender a {
@@ -85,6 +87,8 @@ li:hover {
 
 #sobre, #sobre * {
     background-color: #336F60;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 
 .iconeLateral {

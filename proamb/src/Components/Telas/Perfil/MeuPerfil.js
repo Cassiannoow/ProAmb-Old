@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AuthService from "../../../services/AuthService";
-import './Perfil.css'
+import './perfil.css'
 import icone_editar from '../../../assets/img/icons/icons8-editar-100.png' 
 
 const urlAPI = 'http://localhost:5006/api/usuarios/'

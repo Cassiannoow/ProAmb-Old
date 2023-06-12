@@ -7,9 +7,9 @@ export default function Aprender()
     return (
         <div className="App">
             <div className="organizarCards">
-                <CardsAprender titulo="TÍTULO 1"/>
-                <CardsAprender titulo="TÍTULO 2"/>
-                <CardsAprender titulo="TÍTULO 3"/>
+                <CardsAprender titulo="A importância da RECICLAGEM"/>
+                <CardsAprender titulo="A Arte e o Plástico"/>
+                <CardsAprender titulo="Como Descartar o Vidro"/>
             </div>
         </div>
     )

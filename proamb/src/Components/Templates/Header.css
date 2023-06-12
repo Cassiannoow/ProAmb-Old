@@ -36,7 +36,7 @@ a{
     background-position: -250px center;
 }
 
-.item:hover, span:hover {
+.item:hover{
     -ms-transform: scale(1.3);
     transform: scale(1.3);
 }
@@ -59,4 +59,11 @@ a{
     transition: transform 500ms;
     background-position: -250px center;
     width: 100%;
+}
+
+.txtDH:hover {
+    cursor: pointer;
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+    background-position: -60px;
 }

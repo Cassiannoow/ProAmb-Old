@@ -1,7 +1,7 @@
 import axios from "axios";
 import {React, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import './Perfil.css';
+import './perfil.css';
 
 const urlAPI = 'http://localhost:5006/api/usuarios/'
 const urlAPIposts = 'http://localhost:5006/api/posts/'

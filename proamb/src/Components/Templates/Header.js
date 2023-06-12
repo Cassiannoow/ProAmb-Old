@@ -60,14 +60,14 @@ export default function Header()
                     currentUser ? (
                         <Link to='/meu-perfil'>
                             <div className='entrar'>
-                                <span id='entrar'>Perfil</span>
+                                <span className='txtDH'>Perfil</span>
                             </div>
                         </Link>
                         )
                         : (
                         <Link to='/entrar'>
                             <div className='entrar'>
-                                <span id="entrar">Entrar</span>
+                                <span className="txtDH">Entrar</span>
                             </div>
                         </Link> )
                     }
@@ -77,7 +77,7 @@ export default function Header()
                         currentUser ? (
                         <Link to='/entrar'>
                             <div className='entrar' onClick={deslogar}>
-                                <span id='entrar'>Sair</span>
+                                <span className='txtDH'>Sair</span>
                             </div>
                         </Link> ) :
                         <></>

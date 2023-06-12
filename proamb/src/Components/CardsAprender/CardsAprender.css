@@ -11,20 +11,22 @@
 }
 
 #titulos {
+    font-weight: bold;
     font-size: 40px;
     padding: 20px;
+    text-align: center;
+    margin: auto;
+    max-width: 350px;
 }
 
 .imagemAprender {
     background-color: white;
-    margin-top: 35px;
     width: 400px;
     height: 250px;
 }
 
 .comecar {
-    margin-top: 35px;
-    margin-left: 35px;
+    margin: 35px;
     width: 190px;
     height: 40px;
     border: 2px none;
