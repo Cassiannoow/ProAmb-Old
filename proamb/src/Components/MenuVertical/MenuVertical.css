@@ -51,6 +51,8 @@ li {
     position: relative;
     top: 0;
     left: 0;
+    transition: transform 500ms;
+    background-position: -250px center;
 }
 
 li a {
@@ -62,14 +64,12 @@ li a {
     padding-left: 40px;
 }
 
-
-/* fazer a animação nesse hover*/
 li:hover { 
     display: block;
-    text-decoration: underline;
     cursor: pointer;
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
 }
-
 
 #descartar, #descartar a {
     background-color: #8C7C2B;
