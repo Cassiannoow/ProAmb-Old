@@ -1,7 +1,4 @@
 #telaDescartar {
-    display: grid;
-    grid-template-areas:
-    "buscar lugares";
     display: flex;
     flex-direction: column;
     background-color: #6CBA7F;
@@ -13,7 +10,6 @@
 }
 
 .buscar {
-    grid-area: "buscar";
     margin-top: 60px;
     margin-left: 90px;
     overflow: hidden;
@@ -35,7 +31,6 @@
 }
 
 #tituloBuscar {
-    margin: 25px;
     color: #DEF2D5;
     width: 400px;
 }
@@ -53,4 +48,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 25px;
+}
+
+.botoesLixos{
+    display: flex;
+    flex-direction: column;
 }

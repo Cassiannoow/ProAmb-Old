@@ -4,7 +4,7 @@ import './BarraDeBuscarLugar.css'
 export default function BarraDeBuscarLugar() {
     return (
         <div id="divBuscarLugar">
-            <input type="text" placeholder="Busque"/>
+            <input type="text" id="txtBuscaLugar" placeholder="Busque"/>
         </div>
     )
 }
