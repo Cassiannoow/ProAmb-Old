@@ -20,15 +20,13 @@
 }
 
 .imagemAprender {
-    background-color: white;
     width: 400px;
-    height: 250px;
 }
 
 .comecar {
     margin: 35px;
     width: 190px;
-    height: 40px;
+    min-height: 40px;
     border: 2px none;
     background-color: #729854;
     color: white;
@@ -45,4 +43,9 @@
     transform: scale(1.1);
     background-position: -60px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+}
+
+img{
+    width: 100%;
+    height: auto;
 }

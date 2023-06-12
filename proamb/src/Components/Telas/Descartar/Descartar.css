@@ -35,7 +35,9 @@
 }
 
 #tituloBuscar {
+    margin: 25px;
     color: #DEF2D5;
+    width: 400px;
 }
 
 #btnBuscarNoMapa {
@@ -45,4 +47,10 @@
     background-color: #31733C;
     color: #DEF2D5;
     border-radius: 20px;
+}
+
+.barradebusca{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

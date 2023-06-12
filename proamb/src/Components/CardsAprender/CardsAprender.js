@@ -6,6 +6,7 @@ export default function CardsAprender(props) {
         <div className="cardAprender">
             <span id="titulos"><b>{ props.titulo }</b></span>
             <div className="imagemAprender">
+                <img src={props.imagem}></img>
             </div>
             <button className="comecar"><b>COMEÇAR</b></button>
         </div>

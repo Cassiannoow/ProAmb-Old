@@ -40,8 +40,6 @@ export default function Perfil() {
                     <h3 id='nome'> NOME: {usuario.nome} </h3>
                     <h3 id='email'> EMAIL: {usuario.email} </h3>
                 </div>
-                
-                
                 <div>
                     <p className="txtFora">SEUS AMIGOS:</p>
                     <div className='amigos'>

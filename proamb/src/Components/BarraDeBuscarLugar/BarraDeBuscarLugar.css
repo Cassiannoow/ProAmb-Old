@@ -1,18 +1,13 @@
 #divBuscarLugar {
-    margin-top: 35px;
     background: #FFFAFA;
-    width:  233px;
-    height: 31px;
+    height: 30px;
+    border-radius: 10px;
+    width: 100%;
 }
 
-#txtBuscarLugar {
-    float:left;
-    padding-left: 10px;
-    font-size:18px;
-    border:none;
-    height: 30px;
-    width: 500px;
-    border-radius: 10px;
+input{
+   margin: auto;
+   border: none;
 }
 
 input:focus{
