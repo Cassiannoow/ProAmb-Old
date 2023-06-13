@@ -4,12 +4,16 @@
     top: 0;
     left: 0;
 }
+.mainContext{
+    display: flex;
+    justify-content: space-between;
+    
+    flex-wrap: wrap;
+}
 
 .imagemLateral {
     height: 600px;
     width: auto;
-    margin-right: 125px;
-    margin-left: 100px;
 }
 
 .retangulo {
@@ -34,7 +38,7 @@
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     border-radius: 50px;
-    margin-top: 50px;
+    margin: 25px;
     overflow: hidden;
 }
 

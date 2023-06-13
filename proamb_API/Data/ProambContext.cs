@@ -42,6 +42,11 @@ namespace proamb_API.Data
         public DbSet<Usuarios> Usuarios {get; set;}
         public DbSet<Posts> Posts { get; set; }
         public DbSet<Comentarios> Comentarios { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+	        {
+	            modelBuilder.HasDefaultSchema("Proamb");    
+        }
         //public DbSet<Amigos> Amigos {get; set;}
     }
 }

@@ -55,7 +55,7 @@ export default function Header()
                     </Link>
                 </h3>
 
-                <section>
+                <div className='botaoLogarOuPerfil'>
                     {
                     currentUser ? (
                         <Link to='/meu-perfil'>
@@ -71,8 +71,8 @@ export default function Header()
                             </div>
                         </Link> )
                     }
-                </section>
-                <section>
+                </div>
+                <div className='botaoLogarOuPerfil'>
                     {
                         currentUser ? (
                         <Link to='/entrar'>
@@ -82,7 +82,7 @@ export default function Header()
                         </Link> ) :
                         <></>
                     }
-                </section>
+                </div>
             </header>
         </div>
     )

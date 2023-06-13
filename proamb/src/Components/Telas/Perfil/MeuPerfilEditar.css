@@ -1,0 +1,49 @@
+.perfilEditar{
+    background-color: #6CBA7F;
+    text-align: center;
+    width: 800px;
+    margin: 20px;
+    padding: 30px;
+    border-radius: 25px;
+    margin: auto;
+}
+
+.informacoes_pessoaisEditar{
+    background-color: rgb(213, 251, 209);
+    border-radius: 25px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+#fotoEditar{
+    border: solid 5px white;
+    border-radius: 100%;
+    width: 300px;
+    height: 100%;
+    margin: 25px;
+}
+
+.textosEditar{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.txtForaEditar{
+    color: #000000;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.biografiaEditar{
+    background: #6CBA7F;
+    padding: 15px;
+    border-radius: 25px;
+}
+
+.botoesEditar{
+    margin: 10px;
+    text-align: right;
+}

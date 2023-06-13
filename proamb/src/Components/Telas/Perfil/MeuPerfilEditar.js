@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import AuthService from "../../../services/AuthService";
 import './MeuPerfilEditar.css'
 const urlAPI = 'http://localhost:5006/api/usuarios/'
@@ -53,19 +53,23 @@ export default function MeuPerfilEditar() {
         <>
         { 
             usuario ? (
-            <div className="perfil">
-                    <div className='informacoes_pessoais'>
-                        <img src={usuario.user.foto} alt="" id="foto" />
-                        <div className="textos">
-                            <div className="nomeUsuario">
-                                <h1 id='username'> @{usuario.user.username} </h1>
+            <div className="perfilEditar">
+                    <div className='informacoes_pessoaisEditar'>
+                        <img src={usuario.user.foto} alt="" id="fotoEditar" />
+                        <div className="textosEditar">
+                            <div className="nomeUsuarioEditar">
+                                <h1 id='usernameEditar'> @{usuario.user.username} </h1>
+                                <h3 id='nomeEditar'> NOME: {usuario.user.nome} </h3>
+                                <h3 id='emailEditar'> EMAIL: {usuario.user.email} </h3>
                             </div>
-                            <h3 id='nome'> NOME: {usuario.user.nome} </h3>
-                            <h3 id='email'> EMAIL: {usuario.user.email} </h3>
                             <div>
-                                <p className="txtFora">BIOGRAFIA:</p>
-                                <div className="biografia">
-                                    <p id='bio'>{usuario.user.biografia}</p>
+                                <p className="txtForaEditar">BIOGRAFIA:</p>
+                                <div className="biografiaEditar">
+                                    <p id='bioEditar'>{usuario.user.biografia}</p>
+                                </div>
+                                <div className="botoesEditar">
+                                    <button className="btn-delete-editar">Salvar</button>
+                                    <button className="btn-delete-editar" onClick={e => window.location.replace('/meu-perfil')}>Cancelar</button>
                                 </div>
                             </div>
                         </div>

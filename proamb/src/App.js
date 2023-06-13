@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       <div className='App'>
           <Header />
-          <Rotas />
+          <Rotas className='rotas'/>
       </div>
     </BrowserRouter>
   );

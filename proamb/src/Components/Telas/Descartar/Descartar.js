@@ -1,9 +1,12 @@
 import React, { Component, useEffect } from "react";
 import BarraDeBuscarLugar from "../../BarraDeBuscarLugar/BarraDeBuscarLugar";
 import './Descartar.css';
-
+import { Navigate } from "react-router-dom";
 
 export default class Descartar extends Component {
+    handleMap =() => { 
+        window.location.replace('/map')
+    }
     render() {
         return (
             <div id="telaDescartar">
@@ -12,12 +15,12 @@ export default class Descartar extends Component {
                     <BarraDeBuscarLugar />
                 </div>
                 <div className="botoesDeBusca">
-                    <button id="btnBuscarNoMapa"><b>Buscar no mapa</b></button>
+                    <button id="btnBuscarNoMapa" onClick={this.handleMap}>Buscar no mapa</button>
                     <h2 id="tituloBuscar">Filtrar por:</h2>
                     <div className="botoesLixos">
-                        <button id="btnBuscarNoMapa"><b>Lixo Orgânico</b></button>
-                        <button id="btnBuscarNoMapa"><b>Lixo Reciclável</b></button>
-                        <button id="btnBuscarNoMapa"><b>Lixo Químico</b></button>
+                        <button id="btnLixo">Lixo Orgânico</button>
+                        <button id="btnLixo">Lixo Reciclável</button>
+                        <button id="btnLixo">Lixo Químico</button>
                     </div>
                 </div>
             </div>

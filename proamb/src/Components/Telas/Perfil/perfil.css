@@ -3,7 +3,6 @@
     max-width: 75vw;
     text-align: center;
     margin: auto;
-    margin-top: 150px;
     padding: 30px;
     border-radius: 25px;
     display: grid;
@@ -157,7 +156,7 @@ h3.nomeAmigo{
 .iconEditar{
     width: 80px;
     position: absolute;
-    top: 420px;
-    left: 480px;
+    top: 45%;
+    left: 33%;
     cursor: pointer;
 }

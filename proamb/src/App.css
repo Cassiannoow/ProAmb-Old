@@ -1,9 +1,8 @@
-article {
-  margin-top: 120px
-}
-
 .App {
   font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
 }
 
 .App-logo {

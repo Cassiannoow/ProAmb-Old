@@ -12,7 +12,7 @@ import Grupo from '../../assets/img/icons/Grupo.png'
 export default function MenuVertical(props)
 {
     return (
-        <div>
+        <div className='mainContext'>
             <div className='foto'>
                 <img src={Ilustracao} alt='bonequinho dando oi' className='imagemLateral' />
                 <div className='aviaozinho'>

@@ -29,7 +29,7 @@ export default function Cadastro() {
             .then(
                 () => {
                     console.log("localStorage: " + localStorage.getItem("user"));
-                    navigate("/perfil/" + username);
+                    navigate("/meu-perfil");
                     window.location.reload();
                 },
                 (error) => {

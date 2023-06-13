@@ -1,6 +1,5 @@
 .postsCompletos {
     display: flex;
-    margin-top: 10%;
     border-radius: 50px;
     justify-content: center;
 }
@@ -51,6 +50,11 @@
 
 .comentarioIndividual{
     display: flex;
+}
+
+.comentar{
+    margin: 10px;
+    height: 25%;
 }
 
 #fotoUsuario{

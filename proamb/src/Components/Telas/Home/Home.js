@@ -6,10 +6,10 @@ import Background from "../../../assets/img/Fotos/TelaDeFundo.png"
 export default function Home()
 {
     return (
-        <article>
+        <div className="home">
             <img src={Background} alt="background" className="background" />
-            
             <section id="intro">
+                
                 <div className="card">
                     <div className="texto">
                         <h3>NADA É MAIOR DO QUE A PAZ QUE A NATUREZA TE POSSIBILITA</h3>
@@ -26,10 +26,8 @@ export default function Home()
                 </div>
             </section>
             <section id="menuVertical">
-                <div className="menuVertical">
-                    <MenuVertical />
-                </div>
+                <MenuVertical />
             </section>
-        </article>
+        </div>
     )
 }
