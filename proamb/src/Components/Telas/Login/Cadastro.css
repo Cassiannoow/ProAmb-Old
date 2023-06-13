@@ -1,0 +1,48 @@
+.camposC{
+    margin: 15px;
+}
+.camposC .campo {
+    display: block;
+    width: 450px;
+    height: 30px;
+    margin: 15px;
+    background-color: transparent;
+    border: none;
+    border-bottom: solid rgb(213, 251, 209) 1px;
+    font-size: 18pt;
+    padding-left: 10px;
+    padding-bottom: 2px;
+    color: white;
+}
+
+.camposC #esqueciASenha {
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 15px;
+}
+
+.camposC #esqueciASenha:hover {
+    color: #13241a;
+}
+
+.cabecalhoC{
+    display: flex;
+    justify-content: space-around;
+}
+
+.botoesC{
+    display: flex;
+    justify-content: space-between;
+}
+
+.botoesC .btnLoginC {
+    width: 100px;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    background-color: #519D70;
+    color: white;
+    cursor: pointer;
+    margin: 15px;
+}

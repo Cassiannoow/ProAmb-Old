@@ -61,10 +61,6 @@ export default function Login() {
                     </div>
 
                     <div className="botoes">
-                        <div className="redesSociais">
-                            <img id='googleIcon' src={GoogleIcon} alt="google" width={45} height={50} />
-                            <img id='emailIcon' src={Email} alt="email" width={60} height={50} />
-                        </div>
                         <div id="btnSubmit" className="btnLogin" onClick={handleSubmitLogin}>Login</div>
                     </div>
                 </form>

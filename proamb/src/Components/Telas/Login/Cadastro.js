@@ -4,7 +4,7 @@ import GoogleIcon from '../../../assets/img/icons/google_icon.png';
 import Email from '../../../assets/img/icons/email.png';
 import Conversor from '../../ConversorMD5/Converter';
 import AuthService from "../../../services/AuthService";
-import './Login.css'
+import './Cadastro.css'
 
 export default function Cadastro() {
 
@@ -45,15 +45,15 @@ export default function Cadastro() {
 
     return (
         <article id="telaLogin">
-            <section className="login">
+            <section className="loginC">
                 <form>
-                    <div className="cabecalho">
+                    <div className="cabecalhoC">
                         <Link to='/entrar' ><h3 id='btnLogin' className="deselecionado">LOGIN</h3></Link>
                         <h3 id='btnCadastro' className="selecionado">CADASTRO</h3>
                     </div>
 
-                    <div className="campos">
-                        <div id="campos">
+                    <div className="camposC">
+                        <div id="camposC">
                             <input id='nome' type="text" value={nome} placeholder="Nome completo" className="campo" onChange={({target}) => {setNome(target.value); setMessage('')}} />
                             <input id='username' type="text" value={username} placeholder="Nome de usuário" className="campo" onChange={({target}) => {setUsername(target.value); setMessage('')}} />
                             <input id='email' type="email" value={email} placeholder="Email" className="campo" onChange={({target}) => {setEmail(target.value); setMessage('')}} />
@@ -61,16 +61,10 @@ export default function Cadastro() {
                             <input id='cep' type="text" value={cep} placeholder="CEP" className="campo" onChange={({target}) => {setCep(target.value); setMessage('')}} />
                             <span id='dadosIncorretos'>{message}</span>
                         </div>
-                        <br/>
-                        <span id='esqueciASenha'><u>Esqueci a senha</u></span>
-                    </div>
-
-                    <div className="botoes">
-                        <div className="redesSociais">
-                            <img id='googleIcon' src={GoogleIcon} alt="google" width={45} height={50} />
-                            <img id='emailIcon' src={Email} alt="email" width={60} height={50} />
+                        <div className="botoesC">
+                            <span id='esqueciASenha'><u>Esqueci a senha</u></span>
+                            <div id="btnSubmit" className="btnLoginC" onClick={handleSubmitCadastro}>Cadastrar</div>
                         </div>
-                        <div id="btnSubmit" className="btnLogin" onClick={handleSubmitCadastro}>Cadastrar</div>
                     </div>
                 </form>
             </section>
