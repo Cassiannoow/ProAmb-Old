@@ -14,6 +14,14 @@ export default function MeuPerfilEditar() {
     const [posts, setPosts] = useState({post:{id:0, idUsuario:0, imagem:"", conteudo:""}, listaPosts: []})
     const [comentarios, setComentarios] = useState({comentario: {id: 0, idPost: 0, idUsuario: 0, conteudo:''}, listaComentarios: []})
 
+    const [message, setMessage] = useState('')
+
+    const [email, setEmail] = useState('')
+    const [nome, setNome] = useState('')
+    const [biografia, setBiografia] = useState('')
+    const [foto, setFoto] = useState('')
+    const [cep, setCep] = useState('')
+
     useEffect(() => {
         const user = AuthService.getCurrentUser()
         
@@ -48,10 +56,32 @@ export default function MeuPerfilEditar() {
             window.location.reload()
         })
     }
+
+    function salvarAlteracoes(){
+        console.log(nome)
+        console.log(email)
+        console.log(foto)
+        console.log(biografia)
+        console.log(cep)
+
+
+        axios.put(`${urlAPI}${usuario.user.id}`, {
+            nome,
+            email,
+            foto,
+            biografia,
+            cep
+        }).then(
+            (response) => {
+                console.log(response)
+                window.location.replace('/meu-perfil')
+            }
+        )
+    }
     
     return (
         <>
-        { 
+        {  //falta colocar pra mudar o cep
             usuario ? (
             <div className="perfilEditar">
                     <div className='informacoes_pessoaisEditar'>
@@ -59,16 +89,17 @@ export default function MeuPerfilEditar() {
                         <div className="textosEditar">
                             <div className="nomeUsuarioEditar">
                                 <h1 id='usernameEditar'> @{usuario.user.username} </h1>
-                                <h3 id='nomeEditar'> NOME: {usuario.user.nome} </h3>
-                                <h3 id='emailEditar'> EMAIL: {usuario.user.email} </h3>
+                                <h3 id='nomeEditar'> NOME: </h3> <input type="text" defaultValue={usuario.user.nome} className="campo-perfil-editar" onChange={({target}) => {setNome(target.value); setMessage('')}} />
+                                <h3 id='emailEditar'> EMAIL: </h3> <input type="text" defaultValue={usuario.user.email} className="campo-perfil-editar" onChange={({target}) => {setEmail(target.value); setMessage('')}} />
+                                <h3 id='urlFotoEditar'> FOTO (URL): </h3> <input type="text" defaultValue={usuario.user.foto} placeholder="Digite a url da sua foto de perfil" className="campo-perfil-editar" onChange={({target}) => {setFoto(target.value); setMessage('')}} />
                             </div>
                             <div>
                                 <p className="txtForaEditar">BIOGRAFIA:</p>
                                 <div className="biografiaEditar">
-                                    <p id='bioEditar'>{usuario.user.biografia}</p>
+                                    <input id='bioEditar' type="text" defaultValue={usuario.user.biografia} onChange={({target}) => {setBiografia(target.value); setMessage('')}} />
                                 </div>
                                 <div className="botoesEditar">
-                                    <button className="btn-delete-editar">Salvar</button>
+                                    <button className="btn-delete-editar" onClick={salvarAlteracoes}>Salvar</button>
                                     <button className="btn-delete-editar" onClick={e => window.location.replace('/meu-perfil')}>Cancelar</button>
                                 </div>
                             </div>
