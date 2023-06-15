@@ -46,7 +46,7 @@ namespace proamb_API.Controllers
             return BadRequest();
         }
 
-        /*[HttpPut("{idUsuario}/{idAmigo}")]
+        [HttpPut("{idUsuario}/{idAmigo}")]
         public async Task<ActionResult> put(int idUsuario, int idAmigo, Amigos amigoAlt)
         {
             try {
@@ -66,17 +66,17 @@ namespace proamb_API.Controllers
             }
         }
 
-        [HttpDelete("{idComentario}")]
-        public async Task<ActionResult> delete(int idComentario)
+        [HttpDelete("{idUsuario}/{idAmigo}")]
+        public async Task<ActionResult> delete(int idUsuario, int idAmigo)
         {
             try {
-                var comentario = await _context.Comentarios.FindAsync(idComentario);
-                if(comentario == null)
+                var amigo = await _context.Amigos.FindAsync(idUsuario, idAmigo);
+                if(amigo == null)
                 {
                     return NotFound();
                 }
                 
-                _context.Remove(comentario);
+                _context.Remove(amigo);
                 await _context.SaveChangesAsync();
                 return NoContent();
             }

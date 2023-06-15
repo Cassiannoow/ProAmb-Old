@@ -33,6 +33,11 @@
     width: 400px;
 }
 
+#tituloFiltrar {
+    color: #DEF2D5;
+    width: 150px;
+}
+
 #btnBuscarNoMapa {
     width: 245px;
     height: 74px;
@@ -45,8 +50,7 @@
     font-weight: 400;
     font-size: 20px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 20px;
-
+    border-radius: 20px;
 }
 
 .barradebusca{
@@ -86,4 +90,28 @@ border-radius: 20px;
     transform: scale(1.1);
     transition: 0.1s;
     cursor: pointer;
+}
+
+.botoeselocais{
+    display: flex;
+}
+
+.locais{
+    background-color: #D9D9D9;
+    height: 300px;
+    width: 100%;
+    margin: 25px;
+    border-radius: 25px;
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+.locais::-webkit-scrollbar{
+    border-radius: 25px;
+    height: 10px;
+}
+
+.locais::-webkit-scrollbar-thumb{
+    background-color: #FFFFFF;
+    border-radius: 25px;
 }

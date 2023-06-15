@@ -12,6 +12,7 @@ import MeuPerfil from './Components/Telas/Perfil/MeuPerfil';
 import MeuPerfilEditar from './Components/Telas/Perfil/MeuPerfilEditar';
 import PostsCompletos from "./Components/Telas/Forum/Post/PostsCompletos"
 import MapPage from "./Components/Telas/Descartar/MapPage";
+import SobreNos from "./Components/Telas/SobreNos/SobreNos";
  
 export default function Rotas() {
 
@@ -60,6 +61,10 @@ export default function Rotas() {
                 <Route path='/map' element={
                     <MapPage />
                 }/>
+
+                <Route path='/sobre-nos' element={
+                    <SobreNos />
+                } />
             </Routes>
     )
 }

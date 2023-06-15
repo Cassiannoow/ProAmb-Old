@@ -1,0 +1,9 @@
+.localdedescarte{
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 25px;
+}
+
+.localdedescarte:hover {
+    background-color: #979797;
+}

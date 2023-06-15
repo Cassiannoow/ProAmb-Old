@@ -68,7 +68,7 @@
     display: flex;
     justify-content:space-around;
     padding: 15px;
-    padding-left: 400px;
+    padding-left: 30px;
     overflow: auto;
 }
 
@@ -156,7 +156,7 @@ h3.nomeAmigo{
 .iconEditar{
     width: 80px;
     position: absolute;
-    top: 45%;
+    top: 55%;
     left: 33%;
     cursor: pointer;
 }

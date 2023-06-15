@@ -71,7 +71,7 @@ export default function MeuPerfil() {
                     
                     
                     <div>
-                        <p className="txtFora">SEUS AMIGOS :</p>
+                        <p className="txtFora">CONHEÇA NOVAS PESSOAS :</p>
                         <div className='amigos'>
                             <div id='icones_de_usuario'>
                                 {
@@ -91,7 +91,7 @@ export default function MeuPerfil() {
                                                 </div>
                                             )
                                         }
-                                        return(<div></div>)
+                                        return(<></>)
                                     })
                                 }
                             </div>

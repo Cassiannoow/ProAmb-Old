@@ -1,0 +1,20 @@
+.div-sobre-nos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #70AB7E;
+    border-radius: 25px;
+    margin: auto ;
+    padding: 15px;
+    color: azure;
+}
+
+.listaNomes{
+    border-radius: 0;
+    text-align: center;
+}
+
+.paragrafo{
+    text-align: center;
+}

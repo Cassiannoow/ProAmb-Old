@@ -66,7 +66,6 @@ namespace proamb_API.Controllers
 
                 result.Nome = usuarioAlt.Nome;
                 result.Email = usuarioAlt.Email;
-                result.Senha = usuarioAlt.Senha;
                 result.Username = usuarioAlt.Username;
                 result.Foto = usuarioAlt.Foto;
                 result.Biografia = usuarioAlt.Biografia;

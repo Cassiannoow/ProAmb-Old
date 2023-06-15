@@ -16,18 +16,25 @@ export default function MeuPerfilEditar() {
 
     const [message, setMessage] = useState('')
 
-    const [email, setEmail] = useState('')
-    const [nome, setNome] = useState('')
-    const [biografia, setBiografia] = useState('')
-    const [foto, setFoto] = useState('')
-    const [cep, setCep] = useState('')
+    const [email, setEmail] = useState(usuario.user.email)
+    const [nome, setNome] = useState(usuario.user.nome)
+    const [biografia, setBiografia] = useState(usuario.user.biografia)
+    const [foto, setFoto] = useState(usuario.user.foto)
+    const [cep, setCep] = useState(usuario.user.cep)
+
+    
 
     useEffect(() => {
         const user = AuthService.getCurrentUser()
         
         setUsuario(user)
-        
 
+        setEmail(user.user.email)
+        setNome(user.user.nome)
+        setBiografia(user.user.biografia)
+        setFoto(user.user.foto)
+        setCep(user.user.cep)
+        
         axios(urlAPI).then(resp => {
             setAmigos({lista: resp.data})
         })
@@ -64,16 +71,30 @@ export default function MeuPerfilEditar() {
         console.log(biografia)
         console.log(cep)
 
+        const username = usuario.user.username
+        const senha = usuario.user.senha
+
+        console.log(username)
+        console.log(senha)
 
         axios.put(`${urlAPI}${usuario.user.id}`, {
             nome,
             email,
             foto,
             biografia,
-            cep
+            cep,
+            username,
+            senha
         }).then(
             (response) => {
                 console.log(response)
+                const user = AuthService.getCurrentUser()
+                user.user.nome = nome
+                user.user.email = email
+                user.user.foto = foto
+                user.user.biografia = biografia
+                console.log(user)
+                localStorage.setItem('user', JSON.stringify(user))
                 window.location.replace('/meu-perfil')
             }
         )

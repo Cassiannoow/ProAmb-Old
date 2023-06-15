@@ -1,6 +1,7 @@
 import axios from "axios";
 import {React, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import AuthService from "../../../services/AuthService";
 import './perfil.css';
 
 const urlAPI = 'http://localhost:5006/api/usuarios/'
@@ -41,13 +42,19 @@ export default function Perfil() {
                     <h3 id='email'> EMAIL: {usuario.email} </h3>
                 </div>
                 <div>
-                    <p className="txtFora">SEUS AMIGOS:</p>
+                    <p className="txtFora">CONHEÇA NOVAS PESSOAS:</p>
                     <div className='amigos'>
                         <div id='icones_de_usuario'>
                             {
                                 amigos.lista.map((amigo) => {
                                     function redirect(){
-                                        window.location.replace(`/perfil/${amigo.username}`)
+                                        if(amigo.username == AuthService.getCurrentUser().user.username)
+                                        {
+                                            window.location.replace(`/meu-perfil`)
+                                        }
+                                        else{
+                                            window.location.replace(`/perfil/${amigo.username}`)
+                                        }
                                         console.log(`/perfil/${amigo.username}`)
                                     }
                                     if(amigo.id !== usuario.id)

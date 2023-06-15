@@ -62,7 +62,8 @@
     width: 1200px;
     height: 200px;
     font-size: 20px;
-    
+    border-radius: 25px;
+    padding: 15px;
 }
 
 .link-imagem{
