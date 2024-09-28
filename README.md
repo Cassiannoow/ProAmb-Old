@@ -1,3 +1,4 @@
-#ProAmb#
-
-O Proamb é um site com intuito de divulgar informações sobre o meio ambiente, com area de blog, o projeto foi feito com react e a API em C#, contamos com uma equipe de 3 pessoas.
+<samp>
+  <h1>🌍 ProAmb - (Legacy)</h1> 
+  <p>ProAmb is a website aimed at sharing information about the environment. Featuring a blog section, this project was built with React and utilizes a C# API. It was developed by a team of three, showcasing our collaborative efforts to raise awareness about ecological issues.</p>
+</samp>
